@@ -1,6 +1,6 @@
 document.querySelectorAll('.bx-heart, .bxs-heart').forEach(icon => {
     icon.addEventListener('click', function (e) {
-      e.preventDefault(); // evita que o link recarregue a página
+      e.preventDefault(); 
 
       if (this.classList.contains('bx-heart')) {
         this.classList.remove('bx-heart');
@@ -10,4 +10,19 @@ document.querySelectorAll('.bx-heart, .bxs-heart').forEach(icon => {
         this.classList.add('bx-heart');
       }
     });
+  });
+
+  // seta dos market  ____________________________________________________________
+  const container = document.querySelector('.container-wrapper');
+  const btnLeft = document.querySelector('.arrow.left');
+  const btnRight = document.querySelector('.arrow.right');
+
+  const scrollAmount = 270;
+
+  btnLeft.addEventListener('click', () => {
+    container.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+  });
+
+  btnRight.addEventListener('click', () => {
+    container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
   });

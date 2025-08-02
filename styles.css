@@ -14,9 +14,9 @@
 }
 
 html{
-    background-color: rgb(241, 240, 240);
+    background-color: white;
     scroll-behavior: smooth;
-    height: 300vh;
+    height: auto;
     overflow-x: hidden;
 }
 
@@ -43,7 +43,7 @@ header{
     position: absolute;
     display: flex;
     gap: 35px;
-    left: 35%;
+    left: 31%;
     top: 2%;
 }
 
@@ -53,9 +53,9 @@ header{
 }
 
 .menu li:hover{
-    color: black;
+    color: rgb(0, 0, 0);
     transform: scale(1.1);
-    transition: 0.3s;
+    transition: 0.2s;
 }
 
 .menu-icones{
@@ -74,7 +74,7 @@ header{
 .menu-icones a:hover{
     color: black;
     transform: scale(1.2);
-    transition: 0.3s;
+    transition: 0.2s;
 }
 
 .home-page{
@@ -182,7 +182,7 @@ header{
     display: flex;
     flex-direction: column;
     width: 100%;
-    max-width: 95px;
+    max-width: 90px;
 }
 
 .produto {
@@ -194,7 +194,7 @@ header{
     height: 500px;
     display: flex;
     overflow: hidden;
-    margin-top: 80px;
+    margin-top: 120px;
 }
 
 .produto img {
@@ -315,7 +315,260 @@ header{
 
 
 /* terceira pagina ___________________________________________________________________ */
-.terceiro{
+.terceiro {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 100px;
+  position: relative;
+}
+
+.titulo {
+    position: absolute;
+    top: 1%;
+    left: 2%;
+}
+
+.market-titulo {
+    font-size: 40px;
+    font-weight: bold;
+    color: var(--tertiary-color);
+    white-space: nowrap;
+}
+
+.container-wrapper {
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    width: 80vw;
+    scrollbar-width: none; 
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    width: max-content; 
+    padding-left: 10px;
+    margin-bottom: 40px;
+}
+
+.market {
+  background-color: #ffffff;
+  padding: 50px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.8);
+  width: 400px;
+  height: 320px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  flex-shrink: 0; 
+  margin-top: 100px;
+}
+
+.market img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 30px;
+  margin-bottom: 10px;
+}
+
+.market h2 {
+    position: absolute;
+    top: 80%;
+    left: 10%;
+}
+
+.market p{
+    position: absolute;
+    top: 90%;
+    left: 10%;
+}
+
+.arrow {
+  background-color: #333;
+  color: white;
+  border: none;
+  font-size: 30px;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 50%;
+  z-index: 10;
+}
+
+.arrow:hover{
+    background-color: var(--tertiary-color);
+    transition: 0.3s;
+}
+
+/* quarta pagina ___________________________________________________________________ */
+
+.quarta{
     position: relative;
-    height: 90vh;
+    margin-top: 120px;
+    padding: 40px 20px;
+    min-height: 100vh;
+    background-color: #f9f9f9;
+}
+
+/* quinto contato _________________________________________________________________ */
+.contato-container{
+    height: 100vh;
+    width: 90%;
+    margin-left: 90px;
+    background-color: rgba(15, 190, 53, 0.473);
+    position: relative;
+    margin-top: 150px;
+    border-radius: 50px;
+}
+
+.contato{
+    text-align: center;
+    width: 410px;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    color: rgb(255, 255, 255);
+    border-radius: 10px;
+    padding: 30px 40px;
+    position: absolute;
+    left: 40%;
+    top: 35%;
+}
+
+.contato h1 {
+  font-size: 2em;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.whatsapp-button {
+  display: inline-block;
+  padding: 15px 30px;
+  background-color: #25d366;
+  color: white;
+  font-size: 1.2em;
+  margin-top: 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+}
+
+.whatsapp-button:hover {
+  background-color: #128c7e;
+}
+
+/* rodapé __________________________________________________________________________ */
+
+footer {
+  height: 60%;
+  padding: 200px 20px;
+  margin-top: 100px;
+}
+
+.footer-container {
+  display: flex;
+  position: relative;
+}
+
+.links-rapido{
+  display: flex;
+  gap: 20px;
+  position: absolute;
+  left: 2%;
+  margin-top: -150px;
+}
+
+.links-rapido button{
+  border-radius: 50px;
+  padding: 10px 20px;
+  background-color: rgb(0, 0, 0);
+  border: 1px solid #000000;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.links-rapido button:hover{
+  background-color: white;
+  color: black;
+}
+
+.footer-texto p{
+  color: rgb(0, 0, 0);
+  max-width: 1200px;
+  margin-left: 350px;
+  margin-top: 20px;
+}
+
+.footer-icone{
+  font-size: 30px;
+  position: absolute;
+  left: 13%;
+}
+
+.footer-icone li{
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.footer-icone a{
+   color: rgb(0, 0, 0);
+}
+
+.footer-icone li:hover{
+  transform: scale(1.2);
+}
+
+.bxl-facebook-circle:hover{
+  color: #1877F2;
+}
+
+.bxl-instagram-alt:hover{ 
+  color: #E1306C;
+}
+
+.bxl-discord-alt:hover{
+color: #5865F2; 
+}
+
+.bxl-whatsapp:hover{
+    color: #25d366;
+}
+
+.bxl-gmail:hover{
+  color: #D93025;
+}
+
+.footer-texto hr{
+  margin-left: 330px;
+  margin-top: 10px;
+}
+
+.contribuicao{
+  color: rgb(255, 255, 255);
+  font-size: 25px;
+  max-width: 1200px;
+  margin-left: 340px;
+  margin-top: 20px;
+}
+
+.contribuicao img{
+    width: 5%;
+    height: 35px;
+}
+
+.shope img {
+  width: 70px;
+  height: auto;
+  margin-left: -18px;
+}
+
+.bxs-chevron-right{
+    color: #000;
+    font-size: 35px;
 }
