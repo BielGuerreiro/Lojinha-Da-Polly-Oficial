@@ -3,7 +3,8 @@ let quantidadeSelecionada = '';
 let corSelecionada = '';
 
 document.addEventListener('DOMContentLoaded', () => {
-  // Botões de tamanho
+
+  // Botões de tamanho ________________________________________________________________________
   const botoesTamanho = document.querySelectorAll('.botao-tamanho');
   botoesTamanho.forEach(botao => {
     botao.addEventListener('click', () => {
@@ -14,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Botões de quantidade
+  // Botões de quantidade _______________________________________________________________________________
   const botoesQuantidade = document.querySelectorAll('.botao-quantidade');
   const expandirBtn = document.getElementById('expandir-quantidade');
   const quantidadeExtra = document.getElementById('quantidade-extra');
@@ -33,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
     expandirBtn.style.display = 'none';
   });
 
-  // Botões de cor
+  // Botões de cor ____________________________________________________________________________________
   const botoesCor = document.querySelectorAll('.botao-cor');
   botoesCor.forEach(botao => {
     botao.addEventListener('click', () => {
@@ -44,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Botão "Comprar Agora"
+  // Botão "Comprar Agora" ___________________________________________________________________________________
   const botaoComprar = document.getElementById('botao-comprar');
   botaoComprar.addEventListener('click', () => {
     if (!tamanhoSelecionado || !quantidadeSelecionada || !corSelecionada) {
@@ -73,14 +74,14 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-// botao confirma _______________________________________________
+// botao de aviso  _______________________________________________
 function mostrarConfirmacao(mensagem, callback) {
   const caixa = document.getElementById('confirmacao-custom');
   const texto = document.getElementById('mensagem-confirmacao');
   const btnConfirmar = document.getElementById('btn-confirmar');
   const btnCancelar = document.getElementById('btn-cancelar');
 
-  texto.innerHTML = mensagem; // aqui é o segredo!
+  texto.innerHTML = mensagem;
   caixa.style.display = 'flex';
 
   btnConfirmar.onclick = null;
@@ -97,4 +98,28 @@ function mostrarConfirmacao(mensagem, callback) {
   };
 }
 });
+
+// indicadror ______________________________________________________________________________________
+var imagens = document.querySelectorAll(".img-produto");
+  var bolinhas = document.querySelectorAll(".bolinha");
+
+  var indexAtual = 0;
+
+  function mostrarImagem(index) {
+    for (var i = 0; i < imagens.length; i++) {
+      imagens[i].classList.remove("ativa");
+      bolinhas[i].classList.remove("ativa");
+    }
+
+    imagens[index].classList.add("ativa");
+    bolinhas[index].classList.add("ativa");
+    indexAtual = index;
+  }
+
+  for (var i = 0; i < bolinhas.length; i++) {
+    bolinhas[i].addEventListener("click", function () {
+      var index = parseInt(this.getAttribute("data-index"));
+      mostrarImagem(index);
+    });
+  }
 
