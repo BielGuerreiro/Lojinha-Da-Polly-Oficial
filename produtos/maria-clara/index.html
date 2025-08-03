@@ -42,9 +42,9 @@
     </header>
 
     <main>
-      <div class="nome">
-        <h1>Kit Maria Clara e jp</h1>
-        <p>Por apenas R$180.00</p>
+      <div class="titulo">
+        <div class="barra"></div>
+        <h1 id="nome-produto" class="texto-titulo">Kit maria clara e jp</h1>
       </div>
 
       <div class="container">
@@ -54,7 +54,101 @@
           </div>
         </div>
       </div>
+
+      <div class="detalhes-container">
+        <div class="detalhes">
+          <h1>Descrição do Produto</h1>
+          <p>
+            -Algodão Penteado: Hipoalergênico, macio e com excelente
+            respirabilidade.
+          </p>
+          <p>
+            -Malha com Elastano: Garante flexibilidade para acompanhar os
+            movimentos do bebê sem apertar.
+          </p>
+          <p>-Tule com Forro de Algodão: Cria volume e leveza sem incomodar.</p>
+          <p>
+            -Cetim de Alta Qualidade: Brilho delicado e toque suave, perfeito
+            para ocasiões especiais.
+          </p>
+        </div>
+
+        <div class="cor">
+          <h1>Selecione a cor desejada:</h1>
+          <div class="cores-container">
+            <button class="botao-cor rosa" data-cor="Rosa"></button>
+            <button class="botao-cor azul" data-cor="Azul"></button>
+          </div>
+        </div>
+
+        <div class="tamanho">
+          <h1>Selecione o tamanho desejado:</h1>
+          <div class="tamanhos-container">
+            <button class="botao-tamanho" data-tamanho="PP">PP</button>
+            <button class="botao-tamanho" data-tamanho="P">P</button>
+            <button class="botao-tamanho" data-tamanho="M">M</button>
+            <button class="botao-tamanho" data-tamanho="G">G</button>
+            <button class="botao-tamanho" data-tamanho="GG">GG</button>
+          </div>
+        </div>
+
+        <div class="quantidade">
+          <h1>Selecione a quantidade:</h1>
+          <div class="quantidade-container">
+            <button class="botao-quantidade" data-quantidade="1">1</button>
+            <button class="botao-quantidade" data-quantidade="2">2</button>
+            <button class="botao-quantidade" data-quantidade="3">3</button>
+            <button class="botao-quantidade" data-quantidade="4">4</button>
+            <button class="botao-quantidade" data-quantidade="5">5</button>
+            <button class="botao-quantidade" data-quantidade="6">6</button>
+            <button class="botao-quantidade" data-quantidade="7">7</button>
+            <button class="botao-quantidade" data-quantidade="8">8</button>
+            <button class="botao-quantidade" data-quantidade="9">9</button>
+            <button class="botao-quantidade" data-quantidade="10">10</button>
+            <button class="botao-quantidade" data-quantidade="11">11</button>
+            <button class="botao-quantidade" data-quantidade="12">12</button>
+
+            <button id="expandir-quantidade">...</button>
+
+            <div id="quantidade-extra" style="display: none">
+              <button class="botao-quantidade" data-quantidade="13">13</button>
+              <button class="botao-quantidade" data-quantidade="14">14</button>
+              <button class="botao-quantidade" data-quantidade="15">15</button>
+              <button class="botao-quantidade" data-quantidade="16">16</button>
+              <button class="botao-quantidade" data-quantidade="17">17</button>
+              <button class="botao-quantidade" data-quantidade="18">18</button>
+              <button class="botao-quantidade" data-quantidade="19">19</button>
+              <button class="botao-quantidade" data-quantidade="20">20</button>
+              <button class="botao-quantidade" data-quantidade="21">21</button>
+              <button class="botao-quantidade" data-quantidade="22">22</button>
+              <button class="botao-quantidade" data-quantidade="23">23</button>
+              <button class="botao-quantidade" data-quantidade="24">24</button>
+              <button class="botao-quantidade" data-quantidade="25">25</button>
+              <button class="botao-quantidade" data-quantidade="26">26</button>
+              <button class="botao-quantidade" data-quantidade="27">27</button>
+              <button class="botao-quantidade" data-quantidade="28">28</button>
+              <button class="botao-quantidade" data-quantidade="29">29</button>
+              <button class="botao-quantidade" data-quantidade="30">30</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="comprar">
+          <button id="botao-comprar">Comprar Agora!</button>
+        </div>
+      </div>
     </main>
+
+    <!-- Caixa de confirmação personalizada -->
+    <div id="confirmacao-custom" class="popup" style="display: none">
+      <div class="popup-content">
+        <p id="mensagem-confirmacao"></p>
+        <div class="botoes">
+          <button id="btn-confirmar">Continuar</button>
+          <button id="btn-cancelar">Cancelar</button>
+        </div>
+      </div>
+    </div>
 
     <script src="script.js"></script>
   </body>
