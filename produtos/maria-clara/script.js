@@ -58,7 +58,13 @@ document.addEventListener('DOMContentLoaded', () => {
   const mensagemWhatsApp = `Olá! Quero comprar o produto *${nomeProduto}* com as seguintes opções:\n- Tamanho: ${tamanhoSelecionado}\n- Quantidade: ${quantidadeSelecionada}\n- Cor: ${corSelecionada}`;
   const urlWhatsApp = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensagemWhatsApp)}`;
 
-  const mensagemConfirmacao = `Você selecionou:\nTamanho: ${tamanhoSelecionado}\nQuantidade: ${quantidadeSelecionada}\nCor: ${corSelecionada}\n\nDeseja continuar para o WhatsApp?`;
+  const mensagemConfirmacao = `
+    Você selecionou:<br>
+    Tamanho: ${tamanhoSelecionado}<br>
+    Quantidade: ${quantidadeSelecionada}<br>
+    Cor: ${corSelecionada}<br><br>
+    Deseja continuar para o WhatsApp?`;
+
 
   mostrarConfirmacao(mensagemConfirmacao, (confirmado) => {
     if (confirmado) {
@@ -74,24 +80,21 @@ function mostrarConfirmacao(mensagem, callback) {
   const btnConfirmar = document.getElementById('btn-confirmar');
   const btnCancelar = document.getElementById('btn-cancelar');
 
-  texto.textContent = mensagem;
+  texto.innerHTML = mensagem; // aqui é o segredo!
   caixa.style.display = 'flex';
 
-  // Limpa eventos anteriores
   btnConfirmar.onclick = null;
   btnCancelar.onclick = null;
 
-  // Botão "Continuar"
   btnConfirmar.onclick = () => {
     caixa.style.display = 'none';
     callback(true);
   };
 
-  // Botão "Cancelar"
   btnCancelar.onclick = () => {
     caixa.style.display = 'none';
     callback(false);
   };
-};
+}
 });
 
