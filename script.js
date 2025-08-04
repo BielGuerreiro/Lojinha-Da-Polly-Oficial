@@ -26,3 +26,17 @@ document.querySelectorAll('.bx-heart, .bxs-heart').forEach(icon => {
   btnRight.addEventListener('click', () => {
     container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
   });
+
+// box do menu ________________________________________________________________________________
+var menuItems = document.querySelectorAll('.menu li');
+  var contents = document.querySelectorAll('.menu-content');
+
+  menuItems.forEach(function(item) {
+    item.addEventListener('mouseenter', function() {
+      var target = item.getAttribute('data-menu');
+      contents.forEach(function(c) {
+        c.style.display = 'none';
+      });
+      document.getElementById('menu-' + target).style.display = 'block';
+    });
+  });
