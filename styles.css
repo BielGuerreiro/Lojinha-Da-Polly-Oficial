@@ -74,7 +74,7 @@ header {
   top: 18px;
   display: flex;
   gap: 23px;
-  z-index: 5;
+  z-index: 1;
   cursor: pointer;
 }
 
@@ -199,9 +199,8 @@ header.overlay-ativo .menu-icones li {
 
 .fechar-pesquisa {
   position: fixed;
-  top: -8px;
-  right: 10px;
-  background: transparent;
+  top: -3px;
+  right: 8%;
 }
 
 .fechar-pesquisa i {
@@ -213,15 +212,26 @@ header.overlay-ativo .menu-icones li {
   color: black;
 }
 
+#fundoEscuro {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.4);
+  display: none;
+  z-index: 10;
+}
+
 /* produtos pesquisa __________________________________________________________________ */
 .resultado-busca {
   position: absolute;
   top: 90%;
-  left: 50%;
+  left: 52%;
   transform: translateX(-50%);
   width: 90%;
   max-width: 1000px;
-  max-height: 450px;
+  max-height: 200px;
   overflow-y: auto;
   background-color: white;
   border-top: 1px solid #ccc;
@@ -234,37 +244,174 @@ header.overlay-ativo .menu-icones li {
 }
 
 .resultado-busca-container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 25px;
-  justify-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 100%;
 }
 
 .resultado-busca-container div {
   display: flex;
   flex-direction: column;
-  align-items: center;
   gap: 10px;
-  text-align: center;
-}
-
-.resultado-busca-container img {
-  width: 100px;
-  height: 100px;
-  object-fit: cover;
-  border-radius: 8px;
 }
 
 .resultado-busca-container a {
-  color: black;
+  color: var(--tertiary-color);
   font-size: 16px;
-  text-decoration: none;
 }
 
 .resultado-busca-container a span {
   color: rgb(0, 0, 0);
   font-weight: bold;
   background-color: transparent;
+}
+
+.item-busca {
+  border: 1px solid rgb(182, 181, 181);
+  border-radius: 5px;
+  padding: 8px 16px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  text-align: left;
+}
+
+.item-busca.destaque {
+  border-color: #000;
+}
+
+/* barra lateral favoritos  _____________________________________________________________ */
+.favoritos {
+  position: fixed;
+  top: 0;
+  right: -50%;
+  width: 35%;
+  height: 100%;
+  background-color: var(--secundary-color);
+  z-index: 2;
+  transition: right 0.5s ease;
+  box-shadow: -4px 0 8px rgba(0, 0, 0, 0.9);
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.favoritos.active {
+  right: 0;
+}
+
+#fundoEscuro2 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+  z-index: 1;
+}
+
+.favoritos .topo {
+  position: relative;
+  background-color: #ffffff;
+  padding: 20px;
+  z-index: 3;
+}
+
+.favoritos .topo h2 {
+  color: var(--tertiary-color);
+  text-align: center;
+}
+
+#close-favoritos {
+  position: absolute;
+  top: 25%;
+  right: 5%;
+  font-size: 40px;
+  cursor: pointer;
+  color: #000;
+}
+
+#close-favoritos:hover {
+  color: var(--tertiary-color);
+}
+
+.lateral {
+  margin-top: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.produto-favorito {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  margin-bottom: -80px;
+}
+
+.produto-favorito img {
+  width: 90%;
+  height: 350px;
+  border-radius: 12px;
+  display: block;
+  position: relative;
+  left: 5%;
+  z-index: 4;
+}
+
+.produto-favorito .coracao {
+  position: absolute;
+  bottom: 10px;
+  top: 59%;
+  right: 8%;
+  font-size: 40px;
+  color: #000;
+  cursor: pointer;
+  z-index: 5;
+}
+
+.produto-favorito .preco {
+  position: absolute;
+  left: 8%;
+  top: 60%;
+  color: rgb(0, 0, 0);
+  font-size: 30px;
+  z-index: 5;
+}
+
+.box-finalizar {
+  position: fixed;
+  width: 110%;
+  height: 13%;
+  top: 88%;
+  margin-left: -20px;
+  background-color: #fff;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 5;
+}
+
+.total {
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 50px;
+  margin-left: 20px;
+}
+
+#btn-finalizar {
+  width: 15%;
+  padding: 20px;
+  background-color: #cacaca;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  position: absolute;
+  left: 16%;
+  top: 27%;
+}
+
+#btn-finalizar:hover {
+  background-color: #e04343;
 }
 
 /* home page ___________________________________________________________________________ */
@@ -468,8 +615,81 @@ header.overlay-ativo .menu-icones li {
   color: var(--tertiary-color);
   position: absolute;
   left: 10%;
-  margin-bottom: 130px;
+  margin-bottom: 190px;
   font-size: 30px;
+}
+
+.cores {
+  margin-bottom: 15px;
+  align-self: flex-start;
+  position: absolute;
+  left: 40%;
+  top: 32%;
+}
+
+.cores label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  display: block;
+}
+
+.opcoes-cor {
+  display: flex;
+  gap: 10px;
+}
+
+.btn-cor {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  border: 2px solid var(--tertiary-color);
+  cursor: pointer;
+}
+
+.btn-cor.selecionado {
+  border: 3px solid black;
+}
+
+.btn-cor.azul {
+  background-color: blue;
+}
+
+.btn-cor.vermelho {
+  background-color: red;
+}
+
+.quantidade {
+  margin-bottom: 15px;
+  margin-left: 15px;
+  align-self: flex-start;
+}
+
+.quantidade label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  display: block;
+}
+
+.controle-quantidade {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.btn-quantidade {
+  width: 30px;
+  height: 30px;
+  font-size: 20px;
+  font-weight: bold;
+  background-color: #eee;
+  border: 1px solid var(--tertiary-color);
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.valor-quantidade {
+  font-size: 16px;
+  font-weight: bold;
 }
 
 .estrelas {
@@ -480,12 +700,12 @@ header.overlay-ativo .menu-icones li {
   margin-bottom: -40px;
 }
 
-.acoes {
+.coracao {
   display: flex;
   gap: 6px;
 }
 
-.acoes li i {
+.coracao li i {
   font-size: 40px;
   color: var(--tertiary-color);
   cursor: pointer;
@@ -510,16 +730,16 @@ header.overlay-ativo .menu-icones li {
   transition: color 0.3s ease;
 }
 
-.tamanhos {
+.opcoes-tamanho {
   display: flex;
   gap: 10px;
-  margin-left: 15px;
-  margin-bottom: 30px;
+  margin-left: 10px;
+  margin-bottom: 25px;
   align-self: normal;
 }
 
 .btn-tamanho {
-  padding: 8px 30px;
+  padding: 8px 20px;
   border: none;
   background-color: #eee;
   border-radius: 8px;
@@ -528,6 +748,10 @@ header.overlay-ativo .menu-icones li {
   font-size: 14px;
   transition: background-color 0.3s ease;
   border: 1px solid var(--tertiary-color);
+}
+
+.btn-tamanho.selecionado {
+  border: 2px solid #000;
 }
 
 .btn-tamanho:hover {
@@ -783,7 +1007,7 @@ footer {
   color: #e1306c;
 }
 
-.bxl-discord-alt:hover {
+.bxl-tiktok:hover {
   color: #5865f2;
 }
 

@@ -104,17 +104,32 @@
       <div class="menu-icones">
         <ul>
           <li id="abrirBusca"><i class="bx bx-search"></i></li>
-          <li><i class="bx bx-heart" id="heart"></i></li>
-          <li><i class="bx bx-shopping-bag"></i></li>
+          <li id="favorito-btn"><i class="bx bxs-heart" id="heart"></i></li>
           <li><i class="bx bx-menu"></i></li>
         </ul>
       </div>
+
+      <div id="fundoEscuro" class="overlay"></div>
+      <div id="fundoEscuro2"></div>
 
       <div class="barra-pesquisa" id="barraPesquisa">
         <div id="resultadoBusca" class="resultado-busca"></div>
         <input type="text" placeholder="O que você procura?" />
         <button type="submit"><i class="bx bx-search"></i></button>
         <button class="fechar-pesquisa"><i class="bx bx-x"></i></button>
+      </div>
+
+      <!-- Favoritos -->
+      <div class="favoritos" id="favoritos">
+        <div class="topo">
+          <i class="bx bx-x" id="close-favoritos"></i>
+          <h2>Favoritos (<span id="product-count">0</span>)</h2>
+        </div>
+        <div class="lateral"></div>
+        <div class="box-finalizar">
+          <div class="total">Total: <span id="preco-total">R$ 0,00</span></div>
+          <button id="btn-finalizar">Finalizar compra</button>
+        </div>
       </div>
     </header>
 
@@ -217,16 +232,39 @@
 
               <div class="hover-box">
                 <h1>Painel Rápido</h1>
-                <div class="tamanhos">
-                  <a href=""><button class="btn-tamanho">PP</button></a>
-                  <a href=""><button class="btn-tamanho">P</button></a>
-                  <a href=""><button class="btn-tamanho">M</button></a>
-                  <a href=""><button class="btn-tamanho">G</button></a>
-                </div>
-                <div class="estrelas">⭐ ⭐ ⭐ ⭐ ⭐</div>
-                <div class="acoes">
-                  <li><i class="bx bx-heart"></i></li>
 
+                <!-- Box de cor -->
+                <div class="cores">
+                  <label>Cor:</label>
+                  <div class="opcoes-cor">
+                    <button class="btn-cor azul"></button>
+                    <button class="btn-cor vermelho"></button>
+                  </div>
+                </div>
+
+                <!-- Box de quantidade -->
+                <div class="quantidade">
+                  <label>Quantidade:</label>
+                  <div class="controle-quantidade">
+                    <button class="btn-quantidade diminuir">−</button>
+                    <span class="valor-quantidade">1</span>
+                    <button class="btn-quantidade aumentar">+</button>
+                  </div>
+                </div>
+
+                <!-- Tamanhos -->
+                <div class="opcoes-tamanho">
+                  <button class="btn-tamanho" data-tamanho="PP">PP</button>
+                  <button class="btn-tamanho" data-tamanho="P">P</button>
+                  <button class="btn-tamanho" data-tamanho="M">M</button>
+                  <button class="btn-tamanho" data-tamanho="G">G</button>
+                  <button class="btn-tamanho" data-tamanho="GG">GG</button>
+                </div>
+
+                <div class="estrelas">⭐ ⭐ ⭐ ⭐ ⭐</div>
+
+                <div class="coracao">
+                  <li><i class="bx bx-heart favoritar"></i></li>
                   <a href="https://www.twitch.tv/sacy">
                     <button class="btn-comprar">Comprar</button>
                   </a>
@@ -255,7 +293,7 @@
                 </div>
                 <div class="estrelas">⭐ ⭐ ⭐ ⭐ ⭐</div>
                 <div class="acoes">
-                  <li><i class="bx bx-heart"></i></li>
+                  <li><i class="bx bx-heart favoritar"></i></li>
                   <button class="btn-comprar">Comprar</button>
                 </div>
               </div>
@@ -282,7 +320,7 @@
                 </div>
                 <div class="estrelas">⭐ ⭐ ⭐ ⭐ ⭐</div>
                 <div class="acoes">
-                  <li><i class="bx bx-heart"></i></li>
+                  <li><i class="bx bx-heart favoritar"></i></li>
                   <button class="btn-comprar">Comprar</button>
                 </div>
               </div>
@@ -845,7 +883,7 @@
               <a href=""><i class="bx bxl-whatsapp"></i></a>
             </li>
             <li>
-              <a href=""><i class="bx bxl-discord-alt"></i></a>
+              <a href=""><i class="bx bxl-tiktok"></i></a>
             </li>
             <li>
               <a href=""><i class="bx bxl-gmail"></i></a>
