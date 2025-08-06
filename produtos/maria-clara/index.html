@@ -290,16 +290,37 @@
             <strong>3 a 5 dias úteis</strong>.
           </p>
         </div>
+
+        <div class="box2 box-calculo-frete">
+          <h1>Calcular Frete</h1>
+          <img src="../../img/calculo-frete.webp" alt="Ícone de frete" />
+          <form class="form-frete">
+            <label for="cep">Digite seu CEP:</label>
+            <input
+              type="text"
+              id="cep"
+              name="cep"
+              placeholder="00000-000"
+              maxlength="8"
+              oninput="this.value = this.value.replace(/[^0-9]/g, '')"
+            />
+
+            <button type="submit">Calcular</button>
+          </form>
+          <p class="resultado-frete">
+            Informe seu CEP para ver o prazo e valor.
+          </p>
+        </div>
       </div>
     </section>
 
     <footer>
       <div class="footer-container">
         <div class="links-rapido">
-          <button>Status do seu pedido</button>
-          <button>Termos de uso</button>
-          <button>Devolucao</button>
-          <button>Politica de Privacidade</button>
+          <a href="/status-do-pedido">Status do seu pedido</a>
+          <a href="/termos-de-uso">Termos de uso</a>
+          <a href="/devolucao">Devolução</a>
+          <a href="/politica-de-privacidade">Política de Privacidade</a>
         </div>
 
         <div class="footer-texto">
@@ -355,23 +376,21 @@
               <a href=""><i class="bx bxl-instagram-alt"></i></a>
             </li>
             <li>
-              <a href=""><i class="bx bxl-twitter"></i></a>
-            </li>
-            <li>
               <a href=""><i class="bx bxl-whatsapp"></i></a>
             </li>
             <li>
-              <a href=""><i class="bx bxl-discord-alt"></i></a>
+              <a href=""><i class="bx bxl-tiktok"></i></a>
             </li>
             <li>
               <a href=""><i class="bx bxl-gmail"></i></a>
             </li>
             <li>
-              <a
-                href="https://shopee.com.br/sua-loja"
-                target="_blank"
-                class="shope"
-              >
+              <a href="" target="_blank" class="mercado">
+                <img src="../../img/logo-mercado.png" alt="mercado" />
+              </a>
+            </li>
+            <li>
+              <a href="" target="_blank" class="shope">
                 <img src="../../img/logo-shope.png" alt="Shopee" />
               </a>
             </li>
