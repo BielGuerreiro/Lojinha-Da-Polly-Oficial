@@ -37,7 +37,7 @@ header {
   width: 3%;
   height: auto;
   position: absolute;
-  left: 25%;
+  left: 29%;
   z-index: 2;
 }
 
@@ -51,7 +51,7 @@ header {
   position: absolute;
   display: flex;
   gap: 35px;
-  left: 31%;
+  left: 35%;
   top: 18px;
 }
 
@@ -70,7 +70,7 @@ header {
 
 .menu-icones ul {
   position: absolute;
-  left: 67%;
+  left: 68%;
   top: 18px;
   display: flex;
   gap: 23px;
@@ -119,7 +119,7 @@ header.overlay-ativo .menu-icones li {
   width: 40%;
   padding-left: 50px;
   height: 80%;
-  margin-left: 500px;
+  margin-left: 574px;
 }
 
 .menu-titulo {
@@ -137,7 +137,7 @@ header.overlay-ativo .menu-icones li {
 
 .links-rapidos {
   position: absolute;
-  left: 50%;
+  left: 55%;
   top: 25%;
   display: block;
   margin-bottom: 50px;
@@ -279,6 +279,53 @@ header.overlay-ativo .menu-icones li {
   border-color: #000;
 }
 
+/* usuario _________________________________________________________________________ */
+
+.box-usuario {
+  position: absolute;
+  top: 60px;
+  left: 66%;
+  width: 220px;
+  background-color: #ffffff;
+  border: 1px solid var(--tertiary-color);
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  display: none;
+  z-index: 2;
+}
+
+.btn-entrar {
+  display: block;
+  width: 100%;
+  padding: 10px 0;
+  background-color: var(--tertiary-color);
+  color: #fff;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 8px;
+}
+
+.btn-entrar:hover {
+  background-color: white;
+  border: 1px solid var(--tertiary-color);
+  color: var(--tertiary-color);
+}
+
+.criar-conta {
+  margin-top: 15px;
+  text-align: center;
+}
+
+.criar-conta a {
+  color: var(--tertiary-color);
+  font-weight: bold;
+}
+
+.criar-conta a:hover {
+  text-decoration: underline;
+}
+
 /* barra lateral favoritos  _____________________________________________________________ */
 .favoritos {
   position: fixed;
@@ -346,7 +393,7 @@ header.overlay-ativo .menu-icones li {
   position: relative;
   width: 100%;
   height: 500px;
-  margin-bottom: -80px;
+  margin-bottom: -130px;
 }
 
 .produto-favorito img {
@@ -359,13 +406,14 @@ header.overlay-ativo .menu-icones li {
   z-index: 4;
 }
 
-.produto-favorito .coracao {
+.produto-favorito .desfavoritar {
   position: absolute;
   bottom: 10px;
+  height: 50px;
   top: 59%;
   right: 8%;
   font-size: 40px;
-  color: #000;
+  color: #000000;
   cursor: pointer;
   z-index: 5;
 }
@@ -374,8 +422,38 @@ header.overlay-ativo .menu-icones li {
   position: absolute;
   left: 8%;
   top: 60%;
-  color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
   font-size: 30px;
+  z-index: 5;
+}
+
+.cor-favorito {
+  font-size: 20px;
+  color: #ffffff;
+  margin: 4px 0;
+  position: absolute;
+  left: 8%;
+  top: 53%;
+  z-index: 5;
+}
+
+.tamanho-favorito {
+  font-size: 20px;
+  color: #ffffff;
+  margin: 4px 0;
+  position: absolute;
+  left: 8%;
+  top: 48%;
+  z-index: 5;
+}
+
+.quantidade-favorito {
+  font-size: 20px;
+  color: #ffffff;
+  margin: 4px 0;
+  position: absolute;
+  left: 8%;
+  top: 42%;
   z-index: 5;
 }
 
@@ -399,11 +477,11 @@ header.overlay-ativo .menu-icones li {
 
 #btn-finalizar {
   width: 15%;
-  padding: 20px;
-  background-color: #cacaca;
+  height: 40%;
+  background-color: #000000;
   color: white;
   border: none;
-  border-radius: 5px;
+  border-radius: 12px;
   cursor: pointer;
   position: absolute;
   left: 16%;
@@ -411,7 +489,9 @@ header.overlay-ativo .menu-icones li {
 }
 
 #btn-finalizar:hover {
-  background-color: #e04343;
+  background-color: #ffffff;
+  border: 1px solid #000;
+  color: #000;
 }
 
 /* home page ___________________________________________________________________________ */
@@ -958,7 +1038,7 @@ footer {
   margin-top: -150px;
 }
 
-.links-rapido button {
+.links-rapido a {
   border-radius: 50px;
   padding: 10px 20px;
   background-color: rgb(0, 0, 0);
@@ -968,7 +1048,7 @@ footer {
   cursor: pointer;
 }
 
-.links-rapido button:hover {
+.links-rapido a:hover {
   background-color: white;
   color: black;
 }
@@ -983,7 +1063,8 @@ footer {
 .footer-icone {
   font-size: 30px;
   position: absolute;
-  left: 13%;
+  left: 12%;
+  width: 1.6%;
 }
 
 .footer-icone li {
@@ -1008,7 +1089,7 @@ footer {
 }
 
 .bxl-tiktok:hover {
-  color: #5865f2;
+  color: #c71585;
 }
 
 .bxl-whatsapp:hover {
@@ -1041,6 +1122,12 @@ footer {
   width: 70px;
   height: auto;
   margin-left: -18px;
+}
+
+.mercado img {
+  width: 90px;
+  height: auto;
+  margin-left: -1px;
 }
 
 .bxs-chevron-right {

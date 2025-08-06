@@ -258,7 +258,6 @@ document.addEventListener("DOMContentLoaded", function () {
   const productCount = document.getElementById("product-count");
   const precoTotalEl = document.getElementById("preco-total");
 
-  // Fechar favoritos
   function fecharTudo() {
     favoritos.classList.remove("active");
     fundoEscuro.style.display = "none";
@@ -286,16 +285,22 @@ document.addEventListener("DOMContentLoaded", function () {
     const precos = lateralFavoritos.querySelectorAll(
       ".produto-favorito .preco"
     );
+    const quantidades = lateralFavoritos.querySelectorAll(
+      ".produto-favorito .quantidade-favorito"
+    );
     let total = 0;
 
-    precos.forEach(function (precoEl) {
+    precos.forEach(function (precoEl, index) {
       const texto = precoEl.textContent
         .replace("R$", "")
         .replace(",", ".")
         .trim();
       const valor = parseFloat(texto);
+      const qtdTexto = quantidades[index].textContent.replace(/\D/g, "");
+      const qtd = parseInt(qtdTexto) || 1;
+
       if (!isNaN(valor)) {
-        total += valor;
+        total += valor * qtd;
       }
     });
 
@@ -308,6 +313,28 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function adicionarFavorito(imagemUrl, precoTexto, quantidade, cor, tamanho) {
+    const produtos = lateralFavoritos.querySelectorAll(".produto-favorito");
+
+    for (let produto of produtos) {
+      const img = produto.querySelector("img").src;
+      const corTexto = produto.querySelector(".cor-favorito").textContent;
+      const tamanhoTexto =
+        produto.querySelector(".tamanho-favorito").textContent;
+
+      if (
+        img === imagemUrl &&
+        corTexto.includes(cor) &&
+        tamanhoTexto.includes(tamanho)
+      ) {
+        const qtdEl = produto.querySelector(".quantidade-favorito");
+        const qtdAtual = parseInt(qtdEl.textContent.replace(/\D/g, "")) || 1;
+        const novaQtd = qtdAtual + parseInt(quantidade);
+        qtdEl.innerHTML = `<strong>Quantidade:</strong> ${novaQtd}`;
+        atualizarPrecoTotal();
+        return;
+      }
+    }
+
     const produto = document.createElement("div");
     produto.classList.add("produto-favorito");
 
@@ -318,7 +345,7 @@ document.addEventListener("DOMContentLoaded", function () {
         <p class="cor-favorito"><strong>Cor:</strong> ${cor}</p>
         <p class="tamanho-favorito"><strong>Tamanho:</strong> ${tamanho}</p>
         <p class="quantidade-favorito"><strong>Quantidade:</strong> ${quantidade}</p>
-        <span class="coracao desfavoritar">❤️</span>
+        <span class="desfavoritar"><i class='bx bx-trash'></i></span>
       </div>
     `;
 
@@ -423,26 +450,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-// cor e quantidade ___________________________________________________________________
-document.querySelectorAll(".controle-quantidade").forEach(function (controle) {
-  const diminuir = controle.querySelector(".diminuir");
-  const aumentar = controle.querySelector(".aumentar");
-  const valor = controle.querySelector(".valor-quantidade");
-
-  diminuir.addEventListener("click", function () {
-    let atual = parseInt(valor.textContent);
-    if (atual > 1) {
-      valor.textContent = atual - 1;
-    }
-  });
-
-  aumentar.addEventListener("click", function () {
-    let atual = parseInt(valor.textContent);
-    valor.textContent = atual + 1;
-  });
-});
-
-// cor selecionada _____________________________________________________________________________________
+// cor selecionada
 document.querySelectorAll(".opcoes-cor").forEach(function (grupoCor) {
   const botoes = grupoCor.querySelectorAll(".btn-cor");
 
@@ -454,7 +462,7 @@ document.querySelectorAll(".opcoes-cor").forEach(function (grupoCor) {
   });
 });
 
-// Seleção de tamanho ______________
+// Seleção de tamanho
 document.querySelectorAll(".opcoes-tamanho").forEach(function (grupoTamanho) {
   const botoes = grupoTamanho.querySelectorAll(".btn-tamanho");
 
@@ -464,4 +472,20 @@ document.querySelectorAll(".opcoes-tamanho").forEach(function (grupoTamanho) {
       botao.classList.add("selecionado");
     });
   });
+});
+
+// usuario_________________________________________________________________________________
+const btnUsuario = document.getElementById("usuario");
+const boxUsuario = document.getElementById("boxUsuario");
+
+btnUsuario.addEventListener("click", function () {
+  boxUsuario.style.display =
+    boxUsuario.style.display === "block" ? "none" : "block";
+});
+
+// Fecha ao clicar fora
+document.addEventListener("click", function (e) {
+  if (!boxUsuario.contains(e.target) && !btnUsuario.contains(e.target)) {
+    boxUsuario.style.display = "none";
+  }
 });

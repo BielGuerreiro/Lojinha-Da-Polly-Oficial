@@ -22,8 +22,8 @@
           <li data-menu="conjuntos">Conjuntos</li>
           <li data-menu="kit">Kit Aniversário</li>
           <li data-menu="acessorios">Acessórios</li>
+          <li data-menu="drop">Vitrine Extra</li>
           <li data-menu="suporte">Suporte</li>
-          <li data-menu="personalizado">Pedir Personalizado</li>
         </ul>
 
         <!-- primeiro menu ________________________________________ -->
@@ -70,6 +70,22 @@
           </div>
 
           <!-- quarto menu ____________________________________________________________________________ -->
+
+          <div class="menu-content" id="menu-drop">
+            <h2 class="menu-titulo">Comerciais e diretos</h2>
+            <a href="">Moda & acessórios</a>
+            <a href="">Beleza e cuidados pessoais</a>
+            <a href="">Casa & decoração</a>
+            <a href="">Techs criativos</a>
+
+            <div class="links-rapidos">
+              <h2>Explore Direto</h2>
+              <a href="">Produtos Sob Demanda</a>
+              <a href="">Eletronicos</a>
+            </div>
+          </div>
+
+          <!-- quinto menu ___________________________________________________________________________________ -->
           <div class="menu-content" id="menu-suporte">
             <h2 class="menu-titulo">Diretos e funcionais</h2>
             <a href="">Oi, Precisa de Ajuda?</a>
@@ -82,31 +98,22 @@
               <a href="">Termos de Uso</a>
             </div>
           </div>
-
-          <!-- quinto menu ___________________________________________________________________________________ -->
-          <div class="menu-content" id="menu-personalizado">
-            <h2 class="menu-titulo">Comerciais e diretos</h2>
-            <a href="">Eletronicos</a>
-            <a href="">Problemas com o Pedido?</a>
-
-            <div class="links-rapidos">
-              <h2>Links rapido</h2>
-              <a href="">Produtos Sob Demanda</a>
-              <a href="">Devolucao</a>
-              <a href="">Termos de Uso</a>
-            </div>
-          </div>
         </div>
-
-        <div class="escurecer-fundo"></div>
       </div>
 
       <div class="menu-icones">
         <ul>
           <li id="abrirBusca"><i class="bx bx-search"></i></li>
           <li id="favorito-btn"><i class="bx bxs-heart" id="heart"></i></li>
-          <li><i class="bx bx-menu"></i></li>
+          <li id="usuario"><i class="bx bxs-user"></i></li>
         </ul>
+      </div>
+
+      <div id="boxUsuario" class="box-usuario">
+        <a href="/login" class="btn-entrar">Entrar</a>
+        <p class="criar-conta">
+          <a href="#">Criar conta</a>
+        </p>
       </div>
 
       <div id="fundoEscuro" class="overlay"></div>
@@ -119,11 +126,11 @@
         <button class="fechar-pesquisa"><i class="bx bx-x"></i></button>
       </div>
 
-      <!-- Favoritos -->
+      <!-- Favoritos __________________________________________________________-->
       <div class="favoritos" id="favoritos">
         <div class="topo">
           <i class="bx bx-x" id="close-favoritos"></i>
-          <h2>Favoritos (<span id="product-count">0</span>)</h2>
+          <h2>Carrinho (<span id="product-count">0</span>)</h2>
         </div>
         <div class="lateral"></div>
         <div class="box-finalizar">
@@ -281,26 +288,53 @@
           <div class="produto">
             <div class="img-container">
               <a href="https://music.youtube.com/watch?v=_lo1Ox4l23s&list=LM">
-                <img src="img/stitch 1.jpg" alt="kit stitch" />
+                <img src="img/stitch 1.jpg" alt="kit trolls" />
               </a>
+
               <div class="hover-box">
                 <h1>Painel Rápido</h1>
-                <div class="tamanhos">
-                  <button class="btn-tamanho">PP</button>
-                  <button class="btn-tamanho">P</button>
-                  <button class="btn-tamanho">M</button>
-                  <button class="btn-tamanho">G</button>
+
+                <!-- Box de cor -->
+                <div class="cores">
+                  <label>Cor:</label>
+                  <div class="opcoes-cor">
+                    <button class="btn-cor azul"></button>
+                    <button class="btn-cor vermelho"></button>
+                  </div>
                 </div>
+
+                <!-- Box de quantidade -->
+                <div class="quantidade">
+                  <label>Quantidade:</label>
+                  <div class="controle-quantidade">
+                    <button class="btn-quantidade diminuir">−</button>
+                    <span class="valor-quantidade">1</span>
+                    <button class="btn-quantidade aumentar">+</button>
+                  </div>
+                </div>
+
+                <!-- Tamanhos -->
+                <div class="opcoes-tamanho">
+                  <button class="btn-tamanho" data-tamanho="PP">PP</button>
+                  <button class="btn-tamanho" data-tamanho="P">P</button>
+                  <button class="btn-tamanho" data-tamanho="M">M</button>
+                  <button class="btn-tamanho" data-tamanho="G">G</button>
+                  <button class="btn-tamanho" data-tamanho="GG">GG</button>
+                </div>
+
                 <div class="estrelas">⭐ ⭐ ⭐ ⭐ ⭐</div>
-                <div class="acoes">
+
+                <div class="coracao">
                   <li><i class="bx bx-heart favoritar"></i></li>
-                  <button class="btn-comprar">Comprar</button>
+                  <a href="https://www.twitch.tv/sacy">
+                    <button class="btn-comprar">Comprar</button>
+                  </a>
                 </div>
               </div>
             </div>
           </div>
-          <div class="nome-produto">kit Stitch</div>
-          <div class="preco-produto">R$ 189.00</div>
+          <div class="nome-produto">kit Trolls</div>
+          <div class="preco-produto">R$ 189.90</div>
         </div>
 
         <!-- produto 3______________________________________________________________ -->
@@ -308,25 +342,52 @@
           <div class="produto">
             <div class="img-container">
               <a href="https://music.youtube.com/watch?v=_lo1Ox4l23s&list=LM">
-                <img src="img/saia lol 2.jpg" alt="kit lol" />
+                <img src="img/saia lol 1.jpg" alt="kit trolls" />
               </a>
+
               <div class="hover-box">
                 <h1>Painel Rápido</h1>
-                <div class="tamanhos">
-                  <button class="btn-tamanho">PP</button>
-                  <button class="btn-tamanho">P</button>
-                  <button class="btn-tamanho">M</button>
-                  <button class="btn-tamanho">G</button>
+
+                <!-- Box de cor -->
+                <div class="cores">
+                  <label>Cor:</label>
+                  <div class="opcoes-cor">
+                    <button class="btn-cor azul"></button>
+                    <button class="btn-cor vermelho"></button>
+                  </div>
                 </div>
+
+                <!-- Box de quantidade -->
+                <div class="quantidade">
+                  <label>Quantidade:</label>
+                  <div class="controle-quantidade">
+                    <button class="btn-quantidade diminuir">−</button>
+                    <span class="valor-quantidade">1</span>
+                    <button class="btn-quantidade aumentar">+</button>
+                  </div>
+                </div>
+
+                <!-- Tamanhos -->
+                <div class="opcoes-tamanho">
+                  <button class="btn-tamanho" data-tamanho="PP">PP</button>
+                  <button class="btn-tamanho" data-tamanho="P">P</button>
+                  <button class="btn-tamanho" data-tamanho="M">M</button>
+                  <button class="btn-tamanho" data-tamanho="G">G</button>
+                  <button class="btn-tamanho" data-tamanho="GG">GG</button>
+                </div>
+
                 <div class="estrelas">⭐ ⭐ ⭐ ⭐ ⭐</div>
-                <div class="acoes">
+
+                <div class="coracao">
                   <li><i class="bx bx-heart favoritar"></i></li>
-                  <button class="btn-comprar">Comprar</button>
+                  <a href="https://www.twitch.tv/sacy">
+                    <button class="btn-comprar">Comprar</button>
+                  </a>
                 </div>
               </div>
             </div>
           </div>
-          <div class="nome-produto">kit Saia LOL</div>
+          <div class="nome-produto">kit Trolls</div>
           <div class="preco-produto">R$ 99.90</div>
         </div>
 
@@ -335,25 +396,52 @@
           <div class="produto">
             <div class="img-container">
               <a href="https://music.youtube.com/watch?v=_lo1Ox4l23s&list=LM">
-                <img src="img/realeza 4.jpg" alt="kit realeza" />
+                <img src="img/realeza 1.jpg" alt="kit trolls" />
               </a>
+
               <div class="hover-box">
                 <h1>Painel Rápido</h1>
-                <div class="tamanhos">
-                  <button class="btn-tamanho">PP</button>
-                  <button class="btn-tamanho">P</button>
-                  <button class="btn-tamanho">M</button>
-                  <button class="btn-tamanho">G</button>
+
+                <!-- Box de cor -->
+                <div class="cores">
+                  <label>Cor:</label>
+                  <div class="opcoes-cor">
+                    <button class="btn-cor azul"></button>
+                    <button class="btn-cor vermelho"></button>
+                  </div>
                 </div>
+
+                <!-- Box de quantidade -->
+                <div class="quantidade">
+                  <label>Quantidade:</label>
+                  <div class="controle-quantidade">
+                    <button class="btn-quantidade diminuir">−</button>
+                    <span class="valor-quantidade">1</span>
+                    <button class="btn-quantidade aumentar">+</button>
+                  </div>
+                </div>
+
+                <!-- Tamanhos -->
+                <div class="opcoes-tamanho">
+                  <button class="btn-tamanho" data-tamanho="PP">PP</button>
+                  <button class="btn-tamanho" data-tamanho="P">P</button>
+                  <button class="btn-tamanho" data-tamanho="M">M</button>
+                  <button class="btn-tamanho" data-tamanho="G">G</button>
+                  <button class="btn-tamanho" data-tamanho="GG">GG</button>
+                </div>
+
                 <div class="estrelas">⭐ ⭐ ⭐ ⭐ ⭐</div>
-                <div class="acoes">
-                  <li><i class="bx bx-heart"></i></li>
-                  <button class="btn-comprar">Comprar</button>
+
+                <div class="coracao">
+                  <li><i class="bx bx-heart favoritar"></i></li>
+                  <a href="https://www.twitch.tv/sacy">
+                    <button class="btn-comprar">Comprar</button>
+                  </a>
                 </div>
               </div>
             </div>
           </div>
-          <div class="nome-produto">kit Realeza</div>
+          <div class="nome-produto">kit Trolls</div>
           <div class="preco-produto">R$ 179.90</div>
         </div>
 
@@ -362,25 +450,52 @@
           <div class="produto">
             <div class="img-container">
               <a href="https://music.youtube.com/watch?v=_lo1Ox4l23s&list=LM">
-                <img src="img/peppa 1.jpg" alt="kit peppa" />
+                <img src="img/peppa 1.jpg" alt="kit trolls" />
               </a>
+
               <div class="hover-box">
                 <h1>Painel Rápido</h1>
-                <div class="tamanhos">
-                  <button class="btn-tamanho">PP</button>
-                  <button class="btn-tamanho">P</button>
-                  <button class="btn-tamanho">M</button>
-                  <button class="btn-tamanho">G</button>
+
+                <!-- Box de cor -->
+                <div class="cores">
+                  <label>Cor:</label>
+                  <div class="opcoes-cor">
+                    <button class="btn-cor azul"></button>
+                    <button class="btn-cor vermelho"></button>
+                  </div>
                 </div>
+
+                <!-- Box de quantidade -->
+                <div class="quantidade">
+                  <label>Quantidade:</label>
+                  <div class="controle-quantidade">
+                    <button class="btn-quantidade diminuir">−</button>
+                    <span class="valor-quantidade">1</span>
+                    <button class="btn-quantidade aumentar">+</button>
+                  </div>
+                </div>
+
+                <!-- Tamanhos -->
+                <div class="opcoes-tamanho">
+                  <button class="btn-tamanho" data-tamanho="PP">PP</button>
+                  <button class="btn-tamanho" data-tamanho="P">P</button>
+                  <button class="btn-tamanho" data-tamanho="M">M</button>
+                  <button class="btn-tamanho" data-tamanho="G">G</button>
+                  <button class="btn-tamanho" data-tamanho="GG">GG</button>
+                </div>
+
                 <div class="estrelas">⭐ ⭐ ⭐ ⭐ ⭐</div>
-                <div class="acoes">
-                  <li><i class="bx bx-heart"></i></li>
-                  <button class="btn-comprar">Comprar</button>
+
+                <div class="coracao">
+                  <li><i class="bx bx-heart favoritar"></i></li>
+                  <a href="https://www.twitch.tv/sacy">
+                    <button class="btn-comprar">Comprar</button>
+                  </a>
                 </div>
               </div>
             </div>
           </div>
-          <div class="nome-produto">kit Peppa Pig</div>
+          <div class="nome-produto">kit Trolls</div>
           <div class="preco-produto">R$ 189.90</div>
         </div>
 
@@ -389,25 +504,52 @@
           <div class="produto">
             <div class="img-container">
               <a href="https://music.youtube.com/watch?v=_lo1Ox4l23s&list=LM">
-                <img src="img/minnie rosa 1.jpg" alt="kit minnie" />
+                <img src="img/minnie rosa 1.jpg" alt="kit trolls" />
               </a>
+
               <div class="hover-box">
                 <h1>Painel Rápido</h1>
-                <div class="tamanhos">
-                  <button class="btn-tamanho">PP</button>
-                  <button class="btn-tamanho">P</button>
-                  <button class="btn-tamanho">M</button>
-                  <button class="btn-tamanho">G</button>
+
+                <!-- Box de cor -->
+                <div class="cores">
+                  <label>Cor:</label>
+                  <div class="opcoes-cor">
+                    <button class="btn-cor azul"></button>
+                    <button class="btn-cor vermelho"></button>
+                  </div>
                 </div>
+
+                <!-- Box de quantidade -->
+                <div class="quantidade">
+                  <label>Quantidade:</label>
+                  <div class="controle-quantidade">
+                    <button class="btn-quantidade diminuir">−</button>
+                    <span class="valor-quantidade">1</span>
+                    <button class="btn-quantidade aumentar">+</button>
+                  </div>
+                </div>
+
+                <!-- Tamanhos -->
+                <div class="opcoes-tamanho">
+                  <button class="btn-tamanho" data-tamanho="PP">PP</button>
+                  <button class="btn-tamanho" data-tamanho="P">P</button>
+                  <button class="btn-tamanho" data-tamanho="M">M</button>
+                  <button class="btn-tamanho" data-tamanho="G">G</button>
+                  <button class="btn-tamanho" data-tamanho="GG">GG</button>
+                </div>
+
                 <div class="estrelas">⭐ ⭐ ⭐ ⭐ ⭐</div>
-                <div class="acoes">
-                  <li><i class="bx bx-heart"></i></li>
-                  <button class="btn-comprar">Comprar</button>
+
+                <div class="coracao">
+                  <li><i class="bx bx-heart favoritar"></i></li>
+                  <a href="https://www.twitch.tv/sacy">
+                    <button class="btn-comprar">Comprar</button>
+                  </a>
                 </div>
               </div>
             </div>
           </div>
-          <div class="nome-produto">kit Minnie</div>
+          <div class="nome-produto">kit Trolls</div>
           <div class="preco-produto">R$ 199.90</div>
         </div>
 
@@ -416,25 +558,52 @@
           <div class="produto">
             <div class="img-container">
               <a href="https://music.youtube.com/watch?v=_lo1Ox4l23s&list=LM">
-                <img src="img/chefinha 3.jpg" alt="kit poderosa chefinha" />
+                <img src="img/chefinha  1.jpg" alt="kit trolls" />
               </a>
+
               <div class="hover-box">
                 <h1>Painel Rápido</h1>
-                <div class="tamanhos">
-                  <button class="btn-tamanho">PP</button>
-                  <button class="btn-tamanho">P</button>
-                  <button class="btn-tamanho">M</button>
-                  <button class="btn-tamanho">G</button>
+
+                <!-- Box de cor -->
+                <div class="cores">
+                  <label>Cor:</label>
+                  <div class="opcoes-cor">
+                    <button class="btn-cor azul"></button>
+                    <button class="btn-cor vermelho"></button>
+                  </div>
                 </div>
+
+                <!-- Box de quantidade -->
+                <div class="quantidade">
+                  <label>Quantidade:</label>
+                  <div class="controle-quantidade">
+                    <button class="btn-quantidade diminuir">−</button>
+                    <span class="valor-quantidade">1</span>
+                    <button class="btn-quantidade aumentar">+</button>
+                  </div>
+                </div>
+
+                <!-- Tamanhos -->
+                <div class="opcoes-tamanho">
+                  <button class="btn-tamanho" data-tamanho="PP">PP</button>
+                  <button class="btn-tamanho" data-tamanho="P">P</button>
+                  <button class="btn-tamanho" data-tamanho="M">M</button>
+                  <button class="btn-tamanho" data-tamanho="G">G</button>
+                  <button class="btn-tamanho" data-tamanho="GG">GG</button>
+                </div>
+
                 <div class="estrelas">⭐ ⭐ ⭐ ⭐ ⭐</div>
-                <div class="acoes">
-                  <li><i class="bx bx-heart"></i></li>
-                  <button class="btn-comprar">Comprar</button>
+
+                <div class="coracao">
+                  <li><i class="bx bx-heart favoritar"></i></li>
+                  <a href="https://www.twitch.tv/sacy">
+                    <button class="btn-comprar">Comprar</button>
+                  </a>
                 </div>
               </div>
             </div>
           </div>
-          <div class="nome-produto">kit poderosa chefinha</div>
+          <div class="nome-produto">kit Trolls</div>
           <div class="preco-produto">R$ 189.90</div>
         </div>
 
@@ -443,31 +612,58 @@
           <div class="produto">
             <div class="img-container">
               <a href="https://music.youtube.com/watch?v=_lo1Ox4l23s&list=LM">
-                <img src="img/bolofofos rosa 1.jpg" alt="kit bolofofos rosa" />
+                <img src="img/bolofofos rosa 1.jpg" alt="kit trolls" />
               </a>
+
               <div class="hover-box">
                 <h1>Painel Rápido</h1>
-                <div class="tamanhos">
-                  <button class="btn-tamanho">PP</button>
-                  <button class="btn-tamanho">P</button>
-                  <button class="btn-tamanho">M</button>
-                  <button class="btn-tamanho">G</button>
+
+                <!-- Box de cor -->
+                <div class="cores">
+                  <label>Cor:</label>
+                  <div class="opcoes-cor">
+                    <button class="btn-cor azul"></button>
+                    <button class="btn-cor vermelho"></button>
+                  </div>
                 </div>
+
+                <!-- Box de quantidade -->
+                <div class="quantidade">
+                  <label>Quantidade:</label>
+                  <div class="controle-quantidade">
+                    <button class="btn-quantidade diminuir">−</button>
+                    <span class="valor-quantidade">1</span>
+                    <button class="btn-quantidade aumentar">+</button>
+                  </div>
+                </div>
+
+                <!-- Tamanhos -->
+                <div class="opcoes-tamanho">
+                  <button class="btn-tamanho" data-tamanho="PP">PP</button>
+                  <button class="btn-tamanho" data-tamanho="P">P</button>
+                  <button class="btn-tamanho" data-tamanho="M">M</button>
+                  <button class="btn-tamanho" data-tamanho="G">G</button>
+                  <button class="btn-tamanho" data-tamanho="GG">GG</button>
+                </div>
+
                 <div class="estrelas">⭐ ⭐ ⭐ ⭐ ⭐</div>
-                <div class="acoes">
-                  <li><i class="bx bx-heart"></i></li>
-                  <button class="btn-comprar">Comprar</button>
+
+                <div class="coracao">
+                  <li><i class="bx bx-heart favoritar"></i></li>
+                  <a href="https://www.twitch.tv/sacy">
+                    <button class="btn-comprar">Comprar</button>
+                  </a>
                 </div>
               </div>
             </div>
           </div>
-          <div class="nome-produto">kit Bolofofos Rosa</div>
+          <div class="nome-produto">kit Trolls</div>
           <div class="preco-produto">R$ 189.90</div>
         </div>
-      </div>
 
-      <div class="saiba-mais">
-        <a href=""><h2>Saiba Mais...</h2></a>
+        <div class="saiba-mais">
+          <a href=""><h2>Saiba Mais...</h2></a>
+        </div>
       </div>
     </section>
 
@@ -579,25 +775,52 @@
           <div class="produto">
             <div class="img-container">
               <a href="https://music.youtube.com/watch?v=_lo1Ox4l23s&list=LM">
-                <img src="img/ariel 1.jpg" alt="sereia ariel" />
+                <img src="img/ariel 1.jpg" alt="kit trolls" />
               </a>
+
               <div class="hover-box">
                 <h1>Painel Rápido</h1>
-                <div class="tamanhos">
-                  <button class="btn-tamanho">PP</button>
-                  <button class="btn-tamanho">P</button>
-                  <button class="btn-tamanho">M</button>
-                  <button class="btn-tamanho">G</button>
+
+                <!-- Box de cor -->
+                <div class="cores">
+                  <label>Cor:</label>
+                  <div class="opcoes-cor">
+                    <button class="btn-cor azul"></button>
+                    <button class="btn-cor vermelho"></button>
+                  </div>
                 </div>
+
+                <!-- Box de quantidade -->
+                <div class="quantidade">
+                  <label>Quantidade:</label>
+                  <div class="controle-quantidade">
+                    <button class="btn-quantidade diminuir">−</button>
+                    <span class="valor-quantidade">1</span>
+                    <button class="btn-quantidade aumentar">+</button>
+                  </div>
+                </div>
+
+                <!-- Tamanhos -->
+                <div class="opcoes-tamanho">
+                  <button class="btn-tamanho" data-tamanho="PP">PP</button>
+                  <button class="btn-tamanho" data-tamanho="P">P</button>
+                  <button class="btn-tamanho" data-tamanho="M">M</button>
+                  <button class="btn-tamanho" data-tamanho="G">G</button>
+                  <button class="btn-tamanho" data-tamanho="GG">GG</button>
+                </div>
+
                 <div class="estrelas">⭐ ⭐ ⭐ ⭐ ⭐</div>
-                <div class="acoes">
-                  <li><i class="bx bx-heart"></i></li>
-                  <button class="btn-comprar">Comprar</button>
+
+                <div class="coracao">
+                  <li><i class="bx bx-heart favoritar"></i></li>
+                  <a href="https://www.twitch.tv/sacy">
+                    <button class="btn-comprar">Comprar</button>
+                  </a>
                 </div>
               </div>
             </div>
           </div>
-          <div class="nome-produto">kit Sereia Ariel</div>
+          <div class="nome-produto">kit Trolls</div>
           <div class="preco-produto">R$ 179.90</div>
         </div>
 
@@ -606,25 +829,52 @@
           <div class="produto">
             <div class="img-container">
               <a href="https://music.youtube.com/watch?v=_lo1Ox4l23s&list=LM">
-                <img src="img/bela e a fera 2.jpg" alt="kit bela e a fera" />
+                <img src="img/bela e a fera 1.jpg" alt="kit trolls" />
               </a>
+
               <div class="hover-box">
                 <h1>Painel Rápido</h1>
-                <div class="tamanhos">
-                  <button class="btn-tamanho">PP</button>
-                  <button class="btn-tamanho">P</button>
-                  <button class="btn-tamanho">M</button>
-                  <button class="btn-tamanho">G</button>
+
+                <!-- Box de cor -->
+                <div class="cores">
+                  <label>Cor:</label>
+                  <div class="opcoes-cor">
+                    <button class="btn-cor azul"></button>
+                    <button class="btn-cor vermelho"></button>
+                  </div>
                 </div>
+
+                <!-- Box de quantidade -->
+                <div class="quantidade">
+                  <label>Quantidade:</label>
+                  <div class="controle-quantidade">
+                    <button class="btn-quantidade diminuir">−</button>
+                    <span class="valor-quantidade">1</span>
+                    <button class="btn-quantidade aumentar">+</button>
+                  </div>
+                </div>
+
+                <!-- Tamanhos -->
+                <div class="opcoes-tamanho">
+                  <button class="btn-tamanho" data-tamanho="PP">PP</button>
+                  <button class="btn-tamanho" data-tamanho="P">P</button>
+                  <button class="btn-tamanho" data-tamanho="M">M</button>
+                  <button class="btn-tamanho" data-tamanho="G">G</button>
+                  <button class="btn-tamanho" data-tamanho="GG">GG</button>
+                </div>
+
                 <div class="estrelas">⭐ ⭐ ⭐ ⭐ ⭐</div>
-                <div class="acoes">
-                  <li><i class="bx bx-heart"></i></li>
-                  <button class="btn-comprar">Comprar</button>
+
+                <div class="coracao">
+                  <li><i class="bx bx-heart favoritar"></i></li>
+                  <a href="https://www.twitch.tv/sacy">
+                    <button class="btn-comprar">Comprar</button>
+                  </a>
                 </div>
               </div>
             </div>
           </div>
-          <div class="nome-produto">kit Bela e a Fera</div>
+          <div class="nome-produto">bela e a fera</div>
           <div class="preco-produto">R$ 189.90</div>
         </div>
 
@@ -633,23 +883,47 @@
           <div class="produto">
             <div class="img-container">
               <a href="https://music.youtube.com/watch?v=_lo1Ox4l23s&list=LM">
-                <img
-                  src="img/bolofofos lilas 3.jpg"
-                  alt="kit bolofofos lilas"
-                />
+                <img src="img/bolofofos lilas 1.jpg" alt="kit trolls" />
               </a>
+
               <div class="hover-box">
                 <h1>Painel Rápido</h1>
-                <div class="tamanhos">
-                  <button class="btn-tamanho">PP</button>
-                  <button class="btn-tamanho">P</button>
-                  <button class="btn-tamanho">M</button>
-                  <button class="btn-tamanho">G</button>
+
+                <!-- Box de cor -->
+                <div class="cores">
+                  <label>Cor:</label>
+                  <div class="opcoes-cor">
+                    <button class="btn-cor azul"></button>
+                    <button class="btn-cor vermelho"></button>
+                  </div>
                 </div>
+
+                <!-- Box de quantidade -->
+                <div class="quantidade">
+                  <label>Quantidade:</label>
+                  <div class="controle-quantidade">
+                    <button class="btn-quantidade diminuir">−</button>
+                    <span class="valor-quantidade">1</span>
+                    <button class="btn-quantidade aumentar">+</button>
+                  </div>
+                </div>
+
+                <!-- Tamanhos -->
+                <div class="opcoes-tamanho">
+                  <button class="btn-tamanho" data-tamanho="PP">PP</button>
+                  <button class="btn-tamanho" data-tamanho="P">P</button>
+                  <button class="btn-tamanho" data-tamanho="M">M</button>
+                  <button class="btn-tamanho" data-tamanho="G">G</button>
+                  <button class="btn-tamanho" data-tamanho="GG">GG</button>
+                </div>
+
                 <div class="estrelas">⭐ ⭐ ⭐ ⭐ ⭐</div>
-                <div class="acoes">
-                  <li><i class="bx bx-heart"></i></li>
-                  <button class="btn-comprar">Comprar</button>
+
+                <div class="coracao">
+                  <li><i class="bx bx-heart favoritar"></i></li>
+                  <a href="https://www.twitch.tv/sacy">
+                    <button class="btn-comprar">Comprar</button>
+                  </a>
                 </div>
               </div>
             </div>
@@ -663,25 +937,52 @@
           <div class="produto">
             <div class="img-container">
               <a href="https://music.youtube.com/watch?v=_lo1Ox4l23s&list=LM">
-                <img src="img/luna 2.jpg" alt="kit Show Da Luna" />
+                <img src="img/luna 1.jpg" alt="kit trolls" />
               </a>
+
               <div class="hover-box">
                 <h1>Painel Rápido</h1>
-                <div class="tamanhos">
-                  <button class="btn-tamanho">PP</button>
-                  <button class="btn-tamanho">P</button>
-                  <button class="btn-tamanho">M</button>
-                  <button class="btn-tamanho">G</button>
+
+                <!-- Box de cor -->
+                <div class="cores">
+                  <label>Cor:</label>
+                  <div class="opcoes-cor">
+                    <button class="btn-cor azul"></button>
+                    <button class="btn-cor vermelho"></button>
+                  </div>
                 </div>
+
+                <!-- Box de quantidade -->
+                <div class="quantidade">
+                  <label>Quantidade:</label>
+                  <div class="controle-quantidade">
+                    <button class="btn-quantidade diminuir">−</button>
+                    <span class="valor-quantidade">1</span>
+                    <button class="btn-quantidade aumentar">+</button>
+                  </div>
+                </div>
+
+                <!-- Tamanhos -->
+                <div class="opcoes-tamanho">
+                  <button class="btn-tamanho" data-tamanho="PP">PP</button>
+                  <button class="btn-tamanho" data-tamanho="P">P</button>
+                  <button class="btn-tamanho" data-tamanho="M">M</button>
+                  <button class="btn-tamanho" data-tamanho="G">G</button>
+                  <button class="btn-tamanho" data-tamanho="GG">GG</button>
+                </div>
+
                 <div class="estrelas">⭐ ⭐ ⭐ ⭐ ⭐</div>
-                <div class="acoes">
-                  <li><i class="bx bx-heart"></i></li>
-                  <button class="btn-comprar">Comprar</button>
+
+                <div class="coracao">
+                  <li><i class="bx bx-heart favoritar"></i></li>
+                  <a href="https://www.twitch.tv/sacy">
+                    <button class="btn-comprar">Comprar</button>
+                  </a>
                 </div>
               </div>
             </div>
           </div>
-          <div class="nome-produto">kit Show Da Luna</div>
+          <div class="nome-produto">kit Show da Luna</div>
           <div class="preco-produto">R$ 179.90</div>
         </div>
 
@@ -690,20 +991,47 @@
           <div class="produto">
             <div class="img-container">
               <a href="https://music.youtube.com/watch?v=_lo1Ox4l23s&list=LM">
-                <img src="img/magali 1.jpg" alt="kit magali" />
+                <img src="img/magali 1.jpg" alt="kit trolls" />
               </a>
+
               <div class="hover-box">
                 <h1>Painel Rápido</h1>
-                <div class="tamanhos">
-                  <button class="btn-tamanho">PP</button>
-                  <button class="btn-tamanho">P</button>
-                  <button class="btn-tamanho">M</button>
-                  <button class="btn-tamanho">G</button>
+
+                <!-- Box de cor -->
+                <div class="cores">
+                  <label>Cor:</label>
+                  <div class="opcoes-cor">
+                    <button class="btn-cor azul"></button>
+                    <button class="btn-cor vermelho"></button>
+                  </div>
                 </div>
+
+                <!-- Box de quantidade -->
+                <div class="quantidade">
+                  <label>Quantidade:</label>
+                  <div class="controle-quantidade">
+                    <button class="btn-quantidade diminuir">−</button>
+                    <span class="valor-quantidade">1</span>
+                    <button class="btn-quantidade aumentar">+</button>
+                  </div>
+                </div>
+
+                <!-- Tamanhos -->
+                <div class="opcoes-tamanho">
+                  <button class="btn-tamanho" data-tamanho="PP">PP</button>
+                  <button class="btn-tamanho" data-tamanho="P">P</button>
+                  <button class="btn-tamanho" data-tamanho="M">M</button>
+                  <button class="btn-tamanho" data-tamanho="G">G</button>
+                  <button class="btn-tamanho" data-tamanho="GG">GG</button>
+                </div>
+
                 <div class="estrelas">⭐ ⭐ ⭐ ⭐ ⭐</div>
-                <div class="acoes">
-                  <li><i class="bx bx-heart"></i></li>
-                  <button class="btn-comprar">Comprar</button>
+
+                <div class="coracao">
+                  <li><i class="bx bx-heart favoritar"></i></li>
+                  <a href="https://www.twitch.tv/sacy">
+                    <button class="btn-comprar">Comprar</button>
+                  </a>
                 </div>
               </div>
             </div>
@@ -717,25 +1045,52 @@
           <div class="produto">
             <div class="img-container">
               <a href="https://music.youtube.com/watch?v=_lo1Ox4l23s&list=LM">
-                <img src="img/maria clara 1.jpg" alt="kit maria clara" />
+                <img src="img/maria clara 1.jpg" alt="kit trolls" />
               </a>
+
               <div class="hover-box">
                 <h1>Painel Rápido</h1>
-                <div class="tamanhos">
-                  <button class="btn-tamanho">PP</button>
-                  <button class="btn-tamanho">P</button>
-                  <button class="btn-tamanho">M</button>
-                  <button class="btn-tamanho">G</button>
+
+                <!-- Box de cor -->
+                <div class="cores">
+                  <label>Cor:</label>
+                  <div class="opcoes-cor">
+                    <button class="btn-cor azul"></button>
+                    <button class="btn-cor vermelho"></button>
+                  </div>
                 </div>
+
+                <!-- Box de quantidade -->
+                <div class="quantidade">
+                  <label>Quantidade:</label>
+                  <div class="controle-quantidade">
+                    <button class="btn-quantidade diminuir">−</button>
+                    <span class="valor-quantidade">1</span>
+                    <button class="btn-quantidade aumentar">+</button>
+                  </div>
+                </div>
+
+                <!-- Tamanhos -->
+                <div class="opcoes-tamanho">
+                  <button class="btn-tamanho" data-tamanho="PP">PP</button>
+                  <button class="btn-tamanho" data-tamanho="P">P</button>
+                  <button class="btn-tamanho" data-tamanho="M">M</button>
+                  <button class="btn-tamanho" data-tamanho="G">G</button>
+                  <button class="btn-tamanho" data-tamanho="GG">GG</button>
+                </div>
+
                 <div class="estrelas">⭐ ⭐ ⭐ ⭐ ⭐</div>
-                <div class="acoes">
-                  <li><i class="bx bx-heart"></i></li>
-                  <button class="btn-comprar">Comprar</button>
+
+                <div class="coracao">
+                  <li><i class="bx bx-heart favoritar"></i></li>
+                  <a href="https://www.twitch.tv/sacy">
+                    <button class="btn-comprar">Comprar</button>
+                  </a>
                 </div>
               </div>
             </div>
           </div>
-          <div class="nome-produto">kit Maria Clara e jp</div>
+          <div class="nome-produto">kit Maria Clara e Jp</div>
           <div class="preco-produto">R$ 199.90</div>
         </div>
 
@@ -744,26 +1099,53 @@
           <div class="produto">
             <div class="img-container">
               <a href="https://music.youtube.com/watch?v=_lo1Ox4l23s&list=LM">
-                <img src="img/moana 1.jpg" alt="kit moana" />
+                <img src="img/moana 1.jpg" alt="kit trolls" />
               </a>
+
               <div class="hover-box">
                 <h1>Painel Rápido</h1>
-                <div class="tamanhos">
-                  <button class="btn-tamanho">PP</button>
-                  <button class="btn-tamanho">P</button>
-                  <button class="btn-tamanho">M</button>
-                  <button class="btn-tamanho">G</button>
+
+                <!-- Box de cor -->
+                <div class="cores">
+                  <label>Cor:</label>
+                  <div class="opcoes-cor">
+                    <button class="btn-cor azul"></button>
+                    <button class="btn-cor vermelho"></button>
+                  </div>
                 </div>
+
+                <!-- Box de quantidade -->
+                <div class="quantidade">
+                  <label>Quantidade:</label>
+                  <div class="controle-quantidade">
+                    <button class="btn-quantidade diminuir">−</button>
+                    <span class="valor-quantidade">1</span>
+                    <button class="btn-quantidade aumentar">+</button>
+                  </div>
+                </div>
+
+                <!-- Tamanhos -->
+                <div class="opcoes-tamanho">
+                  <button class="btn-tamanho" data-tamanho="PP">PP</button>
+                  <button class="btn-tamanho" data-tamanho="P">P</button>
+                  <button class="btn-tamanho" data-tamanho="M">M</button>
+                  <button class="btn-tamanho" data-tamanho="G">G</button>
+                  <button class="btn-tamanho" data-tamanho="GG">GG</button>
+                </div>
+
                 <div class="estrelas">⭐ ⭐ ⭐ ⭐ ⭐</div>
-                <div class="acoes">
-                  <li><i class="bx bx-heart"></i></li>
-                  <button class="btn-comprar">Comprar</button>
+
+                <div class="coracao">
+                  <li><i class="bx bx-heart favoritar"></i></li>
+                  <a href="https://www.twitch.tv/sacy">
+                    <button class="btn-comprar">Comprar</button>
+                  </a>
                 </div>
               </div>
             </div>
           </div>
           <div class="nome-produto">kit Moana</div>
-          <div class="preco-produto">R$ 95.00</div>
+          <div class="preco-produto">R$ 95.90</div>
         </div>
 
         <!-- produto 16 _________________________________________________________ -->
@@ -771,25 +1153,52 @@
           <div class="produto">
             <div class="img-container">
               <a href="https://music.youtube.com/watch?v=_lo1Ox4l23s&list=LM">
-                <img src="img/monstro sa 2.jpg" alt="kit monstro sa" />
+                <img src="img/monstro sa 1.jpg" alt="kit trolls" />
               </a>
+
               <div class="hover-box">
                 <h1>Painel Rápido</h1>
-                <div class="tamanhos">
-                  <button class="btn-tamanho">PP</button>
-                  <button class="btn-tamanho">P</button>
-                  <button class="btn-tamanho">M</button>
-                  <button class="btn-tamanho">G</button>
+
+                <!-- Box de cor -->
+                <div class="cores">
+                  <label>Cor:</label>
+                  <div class="opcoes-cor">
+                    <button class="btn-cor azul"></button>
+                    <button class="btn-cor vermelho"></button>
+                  </div>
                 </div>
+
+                <!-- Box de quantidade -->
+                <div class="quantidade">
+                  <label>Quantidade:</label>
+                  <div class="controle-quantidade">
+                    <button class="btn-quantidade diminuir">−</button>
+                    <span class="valor-quantidade">1</span>
+                    <button class="btn-quantidade aumentar">+</button>
+                  </div>
+                </div>
+
+                <!-- Tamanhos -->
+                <div class="opcoes-tamanho">
+                  <button class="btn-tamanho" data-tamanho="PP">PP</button>
+                  <button class="btn-tamanho" data-tamanho="P">P</button>
+                  <button class="btn-tamanho" data-tamanho="M">M</button>
+                  <button class="btn-tamanho" data-tamanho="G">G</button>
+                  <button class="btn-tamanho" data-tamanho="GG">GG</button>
+                </div>
+
                 <div class="estrelas">⭐ ⭐ ⭐ ⭐ ⭐</div>
-                <div class="acoes">
-                  <li><i class="bx bx-heart"></i></li>
-                  <button class="btn-comprar">Comprar</button>
+
+                <div class="coracao">
+                  <li><i class="bx bx-heart favoritar"></i></li>
+                  <a href="https://www.twitch.tv/sacy">
+                    <button class="btn-comprar">Comprar</button>
+                  </a>
                 </div>
               </div>
             </div>
           </div>
-          <div class="nome-produto">kit Mosntro S/A</div>
+          <div class="nome-produto">kit Monstros S/A</div>
           <div class="preco-produto">R$ 189.90</div>
         </div>
 
@@ -818,10 +1227,10 @@
     <footer>
       <div class="footer-container">
         <div class="links-rapido">
-          <button>Status do seu pedido</button>
-          <button>Termos de uso</button>
-          <button>Devolucao</button>
-          <button>Politica de Privacidade</button>
+          <a href="/status-do-pedido">Status do seu pedido</a>
+          <a href="/termos-de-uso">Termos de uso</a>
+          <a href="/devolucao">Devolução</a>
+          <a href="/politica-de-privacidade">Política de Privacidade</a>
         </div>
 
         <div class="footer-texto">
@@ -877,9 +1286,6 @@
               <a href=""><i class="bx bxl-instagram-alt"></i></a>
             </li>
             <li>
-              <a href=""><i class="bx bxl-twitter"></i></a>
-            </li>
-            <li>
               <a href=""><i class="bx bxl-whatsapp"></i></a>
             </li>
             <li>
@@ -889,11 +1295,12 @@
               <a href=""><i class="bx bxl-gmail"></i></a>
             </li>
             <li>
-              <a
-                href="https://shopee.com.br/sua-loja"
-                target="_blank"
-                class="shope"
-              >
+              <a href="" target="_blank" class="mercado">
+                <img src="img/logo-mercado.png" alt="mercado" />
+              </a>
+            </li>
+            <li>
+              <a href="" target="_blank" class="shope">
                 <img src="img/logo-shope.png" alt="Shopee" />
               </a>
             </li>

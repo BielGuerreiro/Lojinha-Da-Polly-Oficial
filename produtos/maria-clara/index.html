@@ -18,26 +18,125 @@
       </div>
 
       <div class="menu">
-        <a href=""><li>Conjuntos</li></a>
-        <a href=""><li>Kit Aniversário</li></a>
-        <a href=""><li>Acessórios</li></a>
-        <a href=""><li>Suporte</li></a>
-        <a href=""><li>Pedir Personalizado</li></a>
+        <ul>
+          <li data-menu="conjuntos">Conjuntos</li>
+          <li data-menu="kit">Kit Aniversário</li>
+          <li data-menu="acessorios">Acessórios</li>
+          <li data-menu="drop">Vitrine Extra</li>
+          <li data-menu="suporte">Suporte</li>
+        </ul>
+
+        <!-- primeiro menu ________________________________________ -->
+        <div class="menu-overlay">
+          <div class="menu-content" id="menu-conjuntos">
+            <h2 class="menu-titulo">Produtos</h2>
+            <a href="">Catálogos</a>
+            <a href="">Conjunto Feminino</a>
+            <a href="">Conjunto Masculino</a>
+
+            <div class="links-rapidos">
+              <h2>Selecionados</h2>
+              <a href="">Compre Aqui</a>
+              <a href="">Favoritos da Loja</a>
+              <a href="">Mais Vendidos</a>
+            </div>
+          </div>
+          <!-- segundo menu ___________________________________________________________ -->
+          <div class="menu-content" id="menu-kit">
+            <h2 class="menu-titulo">Kits</h2>
+            <a href="">Kits Aniversário</a>
+            <a href="">Kits MêsVersário</a>
+
+            <div class="links-rapidos">
+              <h2>Destaque</h2>
+              <a href="">Monte seu kit</a>
+              <a href="">Mais Vendidos</a>
+              <a href="">Kits em Destaque</a>
+            </div>
+          </div>
+
+          <!-- terceiro menu __________________________________________________________________ -->
+          <div class="menu-content" id="menu-acessorios">
+            <h2 class="menu-titulo">Extras que Encantam</h2>
+            <a href="">Tiaras</a>
+            <a href="">Laços</a>
+            <a href="">Estilo Personalizado</a>
+
+            <div class="links-rapidos">
+              <h2>Charme Extra</h2>
+              <a href="">para Presentear</a>
+              <a href="">Top vendidos</a>
+            </div>
+          </div>
+
+          <!-- quarto menu ____________________________________________________________________________ -->
+
+          <div class="menu-content" id="menu-drop">
+            <h2 class="menu-titulo">Comerciais e diretos</h2>
+            <a href="">Moda & acessórios</a>
+            <a href="">Beleza e cuidados pessoais</a>
+            <a href="">Casa & decoração</a>
+            <a href="">Techs criativos</a>
+
+            <div class="links-rapidos">
+              <h2>Explore Direto</h2>
+              <a href="">Produtos Sob Demanda</a>
+              <a href="">Eletronicos</a>
+            </div>
+          </div>
+
+          <!-- quinto menu ___________________________________________________________________________________ -->
+          <div class="menu-content" id="menu-suporte">
+            <h2 class="menu-titulo">Diretos e funcionais</h2>
+            <a href="">Oi, Precisa de Ajuda?</a>
+            <a href="">Problemas com o Pedido?</a>
+
+            <div class="links-rapidos">
+              <h2>Links rapido</h2>
+              <a href="">Status do seu pedido</a>
+              <a href="">Devolucao</a>
+              <a href="">Termos de Uso</a>
+            </div>
+          </div>
+        </div>
       </div>
 
       <div class="menu-icones">
-        <a href=""
-          ><li><i class="bx bx-search"></i></li
-        ></a>
-        <a href=""
-          ><li><i class="bx bx-shopping-bag"></i></li
-        ></a>
-        <a href=""
-          ><li><i class="bx bx-heart"></i></li
-        ></a>
-        <a href=""
-          ><li><i class="bx bx-menu"></i></li
-        ></a>
+        <ul>
+          <li id="abrirBusca"><i class="bx bx-search"></i></li>
+          <li id="favorito-btn"><i class="bx bxs-heart" id="heart"></i></li>
+          <li id="usuario"><i class="bx bxs-user"></i></li>
+        </ul>
+      </div>
+
+      <div id="boxUsuario" class="box-usuario">
+        <a href="/login" class="btn-entrar">Entrar</a>
+        <p class="criar-conta">
+          <a href="#">Criar conta</a>
+        </p>
+      </div>
+
+      <div id="fundoEscuro" class="overlay"></div>
+      <div id="fundoEscuro2"></div>
+
+      <div class="barra-pesquisa" id="barraPesquisa">
+        <div id="resultadoBusca" class="resultado-busca"></div>
+        <input type="text" placeholder="O que você procura?" />
+        <button type="submit"><i class="bx bx-search"></i></button>
+        <button class="fechar-pesquisa"><i class="bx bx-x"></i></button>
+      </div>
+
+      <!-- Favoritos __________________________________________________________-->
+      <div class="favoritos" id="favoritos">
+        <div class="topo">
+          <i class="bx bx-x" id="close-favoritos"></i>
+          <h2>Favoritos (<span id="product-count">0</span>)</h2>
+        </div>
+        <div class="lateral"></div>
+        <div class="box-finalizar">
+          <div class="total">Total: <span id="preco-total">R$ 0,00</span></div>
+          <button id="btn-finalizar">Finalizar compra</button>
+        </div>
       </div>
     </header>
 
