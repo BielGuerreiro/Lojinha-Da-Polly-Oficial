@@ -36,11 +36,11 @@ header {
 }
 
 .logo img {
-  width: 3%;
+  width: 7%;
   height: auto;
   position: absolute;
   left: 25%;
-  top: 1%;
+  top: -59%;
   z-index: 2;
 }
 
@@ -1056,14 +1056,21 @@ footer {
 .contribuicao {
   color: rgb(255, 255, 255);
   font-size: 25px;
-  max-width: 1200px;
   margin-left: 340px;
-  margin-top: 20px;
+  max-width: 1200px;
+  margin-top: -30px;
 }
 
 .contribuicao img {
-  width: 5%;
-  height: 35px;
+  width: 10%;
+  height: auto;
+  margin-top: 10px;
+}
+
+.direitos {
+  position: absolute;
+  left: 26%;
+  margin-top: -85px;
 }
 
 .shope img {

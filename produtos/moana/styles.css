@@ -9,28 +9,30 @@
 
 :root {
   --main-color: white;
-  --secundary-color: #c0bbbb;
+  --secundary-color: rgba(233, 233, 233, 0.308);
   --tertiary-color: #6fa9e4;
+  --quartiary-color: #c0bbbb;
 }
 
 html {
-  background-color: white;
   scroll-behavior: smooth;
-  height: auto;
   overflow-x: hidden;
 }
 
 body {
-  height: 120vh;
+  height: auto;
   margin: 0;
-  background: linear-gradient(to bottom, #00376e 0%, #72b8ff 50%, #ffffff 80%);
+  background: white;
 }
 
 header {
-  height: 6vh;
+  padding: 28px;
+  width: 100%;
+  position: fixed;
   left: 0;
   top: 0;
-  z-index: 12;
+  background-color: #f5f5f5;
+  z-index: 1;
 }
 
 .logo img {
@@ -38,7 +40,7 @@ header {
   height: auto;
   position: absolute;
   left: 25%;
-  top: -3%;
+  top: -59%;
   z-index: 2;
 }
 
@@ -53,11 +55,11 @@ header {
   display: flex;
   gap: 35px;
   left: 35%;
-  top: 18px;
+  top: -10px;
 }
 
 .menu li {
-  color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
   font-size: 17px;
   cursor: pointer;
   z-index: 2;
@@ -80,7 +82,7 @@ header {
 }
 
 .menu-icones ul {
-  color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
   font-size: 18px;
 }
 
@@ -95,13 +97,13 @@ header {
 .menu-overlay {
   position: absolute;
   top: 100%;
-  left: 0;
-  width: 100%;
+  width: 104%;
   height: 30vh;
-  background-color: white;
+  margin-left: -30px;
+  margin-top: -50px;
+  background-color: rgb(255, 255, 255);
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
   display: none;
-  padding: 20px;
 }
 
 header.overlay-ativo .menu li {
@@ -116,11 +118,11 @@ header.overlay-ativo .menu-icones li {
   display: none;
   color: black;
   font-size: 18px;
-  margin-top: 50px;
+  margin-top: 80px;
   width: 40%;
   padding-left: 50px;
   height: 80%;
-  margin-left: 574px;
+  margin-left: 605px;
 }
 
 .menu-titulo {
@@ -162,11 +164,11 @@ header.overlay-ativo .menu-icones li {
   right: 0;
   background-color: white;
   width: 100%;
-  height: 7%;
+  height: 120%;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   display: none;
-  z-index: 1000;
+  z-index: 3;
 }
 
 .barra-pesquisa input {
@@ -221,7 +223,7 @@ header.overlay-ativo .menu-icones li {
   height: 100vh;
   background: rgba(0, 0, 0, 0.4);
   display: none;
-  z-index: 10;
+  z-index: 2;
 }
 
 /* produtos pesquisa __________________________________________________________________ */
@@ -334,7 +336,7 @@ header.overlay-ativo .menu-icones li {
   right: -50%;
   width: 35%;
   height: 100%;
-  background-color: var(--secundary-color);
+  background-color: var(--quartiary-color);
   z-index: 2;
   transition: right 0.5s ease;
   box-shadow: -4px 0 8px rgba(0, 0, 0, 0.9);
@@ -495,74 +497,10 @@ header.overlay-ativo .menu-icones li {
   color: #000;
 }
 
-/* home page ___________________________________________________________________________ */
-.home-page {
-  position: relative;
-  margin-top: 90px;
-}
-
-.banner {
-  background: white;
-  overflow: hidden;
-  white-space: nowrap;
-  padding: 13px 0;
-}
-
-.logo-banner {
-  display: inline-block;
-  animation: slide 75s linear infinite;
-}
-
-.logo-banner i {
-  font-size: 30px;
-  vertical-align: middle;
-}
-
-.logo-banner h1 {
-  display: inline-block;
-  font-size: 20px;
-  margin: 0 30px;
-  color: black;
-  font-weight: bold;
-}
-
-.bxs-truck {
-  font-size: 20px;
-}
-
-.banner:hover .logo-banner {
-  animation-play-state: paused;
-}
-
-@keyframes slide {
-  0% {
-    transform: translateX(0%);
-  }
-  100% {
-    transform: translateX(-100%);
-  }
-}
-
-.home-imagens {
-  position: relative;
-  top: 50px;
-  left: 20%;
-}
-
-.home-imagens img {
-  width: 70%;
-  height: auto;
-  object-fit: cover;
-  border-radius: 50px;
-}
-
-/* pagina 2 __________________________________________________________________ */
-.pagina2 {
-  position: relative;
-  margin-top: 120px;
-  padding: 40px 20px;
-  min-height: 100vh;
-  background-color: #f9f9f9;
+/* home page _________________________________________________________________________________________ */
+main {
+  height: 330vh;
+  margin-top: -42px;
 }
 
 .titulo {
@@ -570,6 +508,8 @@ header.overlay-ativo .menu-icones li {
   display: flex;
   align-items: center;
   gap: 20px;
+  margin-top: 200px;
+  margin-left: 150px;
 }
 
 .barra {
@@ -580,374 +520,317 @@ header.overlay-ativo .menu-icones li {
 }
 
 .texto-titulo {
-  font-size: 40px;
+  font-size: 45px;
   font-weight: bold;
   color: var(--tertiary-color);
-  white-space: nowrap;
-  text-shadow: 0 0 12px;
+  cursor: default;
 }
 
 .produto-container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  margin-left: 50px;
-}
-
-.titulo {
-  position: absolute;
-  top: 1%;
-}
-
-.produto-wrapper {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  max-width: 90px;
+  width: 75%;
+  height: 250vh;
+  margin-top: 70px;
 }
 
 .produto {
-  background-color: #ffffff;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  width: 600%;
-  height: 500px;
-  display: flex;
-  overflow: hidden;
-  margin-top: 120px;
-}
-
-.produto img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 30px;
-}
-
-.nome-produto {
-  margin-top: 10px;
-  font-size: 25px;
-  font-weight: bold;
-  color: var(--tertiary-color);
-  white-space: nowrap;
-  margin-left: 20px;
-}
-
-.preco-produto {
-  font-weight: bold;
-  color: black;
-  font-size: 30px;
-  white-space: nowrap;
-  margin-left: 20px;
-}
-
-.saiba-mais {
-  position: absolute;
-  left: 70%;
-  top: 93%;
-}
-
-.saiba-mais a {
-  color: var(--tertiary-color);
-  font-size: 20px;
-}
-
-.saiba-mais a:hover {
-  color: black;
-  transition: 0.2s;
-}
-
-.img-container {
-  position: relative;
-  width: 100%;
-}
-
-.img-container img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 30px;
-  display: block;
-}
-
-.hover-box {
-  position: absolute;
-  bottom: 0;
+  position: sticky;
   left: 10%;
-  top: 32%;
-  width: 80%;
-  height: 60%;
-  background-color: rgba(255, 255, 255, 0.9);
+  top: 5%;
+  width: 90%;
+  height: 800px;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  padding: 30px;
+  background-color: rgba(233, 233, 233, 0.308);
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
-  justify-content: flex-end;
-  padding: 20px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+}
+
+.galeria {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+.img-produto {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 110%;
+  border-radius: 12px;
+  margin-top: -30px;
   opacity: 0;
-  transition: opacity 0.6s ease;
-  border-radius: 30px;
+  transition: opacity 0.5s ease;
 }
 
-.produto:hover .hover-box {
+.img-produto.ativa {
   opacity: 1;
+  z-index: 1;
 }
 
-.hover-box h1 {
-  color: var(--tertiary-color);
+.indicadores {
   position: absolute;
-  left: 10%;
-  margin-bottom: 190px;
-  font-size: 30px;
-}
-
-.cores {
-  margin-bottom: 15px;
-  align-self: flex-start;
-  position: absolute;
-  left: 40%;
-  top: 32%;
-}
-
-.cores label {
-  font-weight: bold;
-  margin-bottom: 5px;
-  display: block;
-}
-
-.opcoes-cor {
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
-  gap: 10px;
+  gap: 15px;
+  z-index: 2;
+  background-color: rgba(228, 228, 228, 0.795);
+  padding: 20px 50px;
+  border-radius: 12px;
 }
 
-.btn-cor {
-  width: 35px;
-  height: 35px;
+.bolinha {
+  width: 18px;
+  height: 18px;
+  background-color: var(--tertiary-color);
   border-radius: 50%;
-  border: 2px solid var(--tertiary-color);
+  transition: all 0.4s ease;
   cursor: pointer;
 }
 
-.btn-cor.selecionado {
-  border: 3px solid black;
+.bolinha.ativa {
+  width: 40px;
+  height: 8px;
+  border-radius: 4px;
+  transform: translateY(6px);
 }
 
-.btn-cor.azul {
-  background-color: blue;
+.detalhes-container {
+  width: 20%;
+  height: 240vh;
+  position: absolute;
+  left: 78%;
+  top: 45%;
 }
 
-.btn-cor.vermelho {
-  background-color: red;
+.detalhes {
+  display: grid;
+  gap: 30px;
 }
 
-.quantidade {
-  margin-bottom: 15px;
-  margin-left: 15px;
-  align-self: flex-start;
+.detalhes h1 {
+  color: var(--tertiary-color);
+  cursor: default;
 }
 
-.quantidade label {
-  font-weight: bold;
-  margin-bottom: 5px;
-  display: block;
+.detalhes p {
+  color: #000;
+  gap: 20px;
 }
 
-.controle-quantidade {
+/* cor */
+.cor {
+  margin-top: 350px;
+}
+
+.cor h1 {
+  color: var(--tertiary-color);
+}
+
+.cores-container {
   display: flex;
-  align-items: center;
   gap: 10px;
+  margin-top: 30px;
 }
 
-.btn-quantidade {
+.botao-cor {
   width: 30px;
   height: 30px;
-  font-size: 20px;
-  font-weight: bold;
-  background-color: #eee;
-  border: 1px solid var(--tertiary-color);
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.valor-quantidade {
-  font-size: 16px;
-  font-weight: bold;
-}
-
-.estrelas {
-  font-size: 21px;
-  color: gold;
-  white-space: nowrap;
-  align-self: flex-start;
-  margin-bottom: -40px;
-}
-
-.coracao {
-  display: flex;
-  gap: 6px;
-}
-
-.coracao li i {
-  font-size: 40px;
-  color: var(--tertiary-color);
-  cursor: pointer;
-}
-
-.btn-comprar {
-  background-color: var(--tertiary-color);
-  color: white;
-  border: none;
-  padding: 15px 50px;
-  border-radius: 30px;
-  cursor: pointer;
-  font-weight: bold;
-}
-
-.btn-comprar:hover {
-  background-color: var(--main-color);
-  color: var(--tertiary-color);
-}
-
-.favorito i {
-  transition: color 0.3s ease;
-}
-
-.opcoes-tamanho {
-  display: flex;
-  gap: 10px;
-  margin-left: 10px;
-  margin-bottom: 25px;
-  align-self: normal;
-}
-
-.btn-tamanho {
-  padding: 8px 20px;
-  border: none;
-  background-color: #eee;
-  border-radius: 8px;
-  cursor: pointer;
-  font-weight: bold;
-  font-size: 14px;
-  transition: background-color 0.3s ease;
-  border: 1px solid var(--tertiary-color);
-}
-
-.btn-tamanho.selecionado {
-  border: 2px solid #000;
-}
-
-.btn-tamanho:hover {
-  background-color: var(--tertiary-color);
-}
-
-/* terceira pagina ___________________________________________________________________ */
-.terceiro {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  margin-top: 100px;
-  position: relative;
-}
-
-.titulo {
-  position: absolute;
-  top: 1%;
-  left: 2%;
-}
-
-.market-titulo {
-  font-size: 40px;
-  font-weight: bold;
-  color: var(--tertiary-color);
-  white-space: nowrap;
-  text-shadow: 0 0 12px;
-}
-
-.container-wrapper {
-  overflow-x: auto;
-  scroll-behavior: smooth;
-  width: 80vw;
-  scrollbar-width: none;
-}
-
-.container {
-  display: flex;
-  flex-direction: row;
-  gap: 30px;
-  width: max-content;
-  padding-left: 10px;
-  margin-bottom: 40px;
-}
-
-.market {
-  background-color: #ffffff;
-  padding: 50px;
-  border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
-  width: 400px;
-  height: 320px;
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  flex-shrink: 0;
-  margin-top: 100px;
-}
-
-.market img {
-  width: 100%;
-  height: 150px;
-  object-fit: cover;
-  border-radius: 30px;
-  margin-bottom: 10px;
-}
-
-.market h2 {
-  position: absolute;
-  color: var(--tertiary-color);
-  top: 80%;
-  left: 10%;
-}
-
-.market p {
-  position: absolute;
-  top: 90%;
-  left: 10%;
-  color: #000;
-  font-size: 23px;
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-}
-
-.arrow {
-  background-color: #333;
-  color: white;
-  border: none;
-  font-size: 30px;
-  padding: 10px 15px;
-  cursor: pointer;
   border-radius: 50%;
-  z-index: 10;
+  cursor: pointer;
+  border: none;
 }
 
-.arrow:hover {
+.rosa {
+  background: rgb(230, 41, 72);
+}
+
+.botao-cor.selecionado {
+  border: 3px solid #020202;
+}
+
+/* taamnho */
+.tamanho {
+  text-align: center;
+  margin-top: 500px;
+}
+
+.tamanho h1 {
+  color: var(--tertiary-color);
+  margin-bottom: 30px;
+}
+
+.tamanhos-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  margin: 0 auto;
+}
+
+.botao-tamanho {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: 1px solid #000000;
+  border-radius: 8px;
+  background-color: var(--secundary-color);
+  color: black;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.botao-tamanho.selecionado {
   background-color: var(--tertiary-color);
-  transition: 0.3s;
+  color: rgb(255, 255, 255);
 }
 
-/* quarta pagina ___________________________________________________________________ */
-
-.quarta {
-  position: relative;
-  margin-top: 120px;
-  padding: 40px 20px;
-  min-height: 100vh;
-  background-color: #f9f9f9;
+/* quantidade  */
+.quantidade-container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+  margin: 0 auto;
+  margin-top: 20px;
 }
 
-.titulo2 {
-  position: relative;
+.quantidade h1 {
+  color: var(--tertiary-color);
+  margin-top: 400px;
+}
+
+.botao-quantidade,
+#expandir-quantidade {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #000000;
+  border-radius: 6px;
+  background-color: var(--secundary-color);
+  color: black;
+  cursor: pointer;
+}
+
+.botao-quantidade.selecionado {
+  background-color: var(--tertiary-color);
+  color: rgb(255, 255, 255);
+}
+
+/* comprar */
+.comprar {
   display: flex;
+  margin-top: 100px;
+}
+
+.comprar button {
+  padding: 30px 60px;
+  border: 1px solid #000;
+  background-color: transparent;
+  border-radius: 10px;
+  color: #000;
+  font-size: 30px;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.comprar button:hover {
+  background-color: #000;
+  color: white;
+  border: 1px solid var(--tertiary-color);
+  box-shadow: 0 0 50px var(--tertiary-color);
+}
+
+.descricao-comprar {
+  width: 80%;
+  height: 5%;
+  background-color: rgba(110, 110, 110, 0.788);
+  position: absolute;
+  overflow: hidden;
+  top: 97%;
+  left: 10%;
+  border-radius: 12px;
+}
+
+.descricao-comprar p {
+  color: white;
+  max-width: 400px;
+  padding: 10px 10px 10px;
+}
+
+/* caixa de confimacao __________________________________________________________________________ */
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
   align-items: center;
-  gap: 20px;
+  z-index: 999;
+}
+
+.popup-content {
+  background: white;
+  padding: 100px;
+  border-radius: 10px;
+  text-align: center;
+  max-width: 700px;
+  width: 100%;
+  height: 50%;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+}
+
+.popup-content p {
+  font-size: 25px;
+  color: var(--tertiary-color);
+  margin-bottom: 20px;
+}
+
+.botoes {
+  display: flex;
+  justify-content: space-around;
+}
+
+.botoes button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 17px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+#btn-confirmar {
+  background-color: #28a745;
+  color: white;
+}
+
+#btn-confirmar:hover {
+  background-color: #04741c;
+}
+
+#btn-cancelar {
+  background-color: #dc3545;
+  color: white;
+}
+
+#btn-cancelar:hover {
+  background-color: #3d0006;
+}
+
+/* segunda pagina __________________________________________________________________ */
+.segunda {
+  position: relative;
+  height: 70vh;
+  background-color: rgba(233, 232, 232, 0.363);
+  margin-top: -700px;
 }
 
 .barra2 {
@@ -955,67 +838,127 @@ header.overlay-ativo .menu-icones li {
   height: 8vh;
   background-color: var(--tertiary-color);
   border-radius: 20px;
+  margin-top: 70px;
 }
 
-.laco {
-  position: relative;
-  margin-top: -30px;
-  height: 70vh;
+.segundo-titulo {
+  font-size: 45px;
+  font-weight: bold;
+  color: var(--tertiary-color);
+  cursor: default;
+  margin-top: 70px;
 }
 
-.laco img {
-  width: 100%;
-  height: 80vh;
-  margin-top: -200px;
+.container-opcoes {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 80px;
 }
 
-/* quinto contato _________________________________________________________________ */
-.contato-container {
-  height: 100vh;
-  width: 90%;
-  margin-left: 90px;
-  background-color: rgba(15, 190, 53, 0.473);
-  position: relative;
-  margin-top: 150px;
-  border-radius: 50px;
-}
-
-.contato {
+.box {
+  width: 20%;
+  height: 400px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
   text-align: center;
-  width: 410px;
-  background: transparent;
-  border: 2px solid rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(20px);
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  color: rgb(255, 255, 255);
-  border-radius: 10px;
-  padding: 30px 40px;
+  position: relative;
+}
+
+.box h1 {
+  color: var(--tertiary-color);
+  font-size: 35px;
   position: absolute;
-  left: 38%;
-  top: 20%;
+  left: 5%;
+  top: 5%;
 }
 
-.contato h1 {
-  font-size: 2em;
-  color: #fff;
-  margin-bottom: 20px;
+.box img {
+  width: 30%;
+  height: auto;
+  position: absolute;
+  left: 32%;
+  top: 15%;
 }
 
-.whatsapp-button {
-  display: inline-block;
-  padding: 15px 30px;
-  background-color: #25d366;
-  color: white;
-  font-size: 1.2em;
+.info-pagamento {
+  font-size: 16px;
+  color: #333;
   margin-top: 20px;
-  text-decoration: none;
-  border-radius: 5px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: background-color 0.3s ease;
+  position: absolute;
+  top: 48%;
+  left: 2%;
 }
 
-.whatsapp-button:hover {
-  background-color: #128c7e;
+.info-pagamento strong {
+  color: #28a745;
+}
+
+.info-frete {
+  font-size: 16px;
+  color: #333;
+  margin-top: 20px;
+  line-height: 1.6;
+  position: absolute;
+  top: 55%;
+  left: 2%;
+}
+
+.info-frete strong {
+  color: #ff6600;
+}
+
+/* calcular frete __________________________________________________________ */
+
+.box2 {
+  width: 30%;
+  height: 400px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  text-align: center;
+  position: relative;
+}
+
+.box-calculo-frete {
+  background-color: #f9f9f9;
+}
+
+.form-frete {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.form-frete input {
+  padding: 8px;
+  border: 1px solid var(--tertiary-color);
+  border-radius: 6px;
+}
+
+.form-frete button {
+  padding: 10px;
+  background-color: #000;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.form-frete button:hover {
+  background-color: #ffffff;
+  color: #000;
+  border: 1px solid #000;
+}
+
+.resultado-frete {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #555;
 }
 
 /* rodapé __________________________________________________________________________ */
@@ -1029,7 +972,6 @@ footer {
 .footer-container {
   display: flex;
   position: relative;
-  height: 50vh;
 }
 
 .links-rapido {
@@ -1112,7 +1054,7 @@ footer {
   font-size: 25px;
   margin-left: 340px;
   max-width: 1200px;
-  margin-top: -200px;
+  margin-top: -30px;
 }
 
 .contribuicao img {
@@ -1123,7 +1065,7 @@ footer {
 
 .direitos {
   position: absolute;
-  left: 28%;
+  left: 26%;
   margin-top: -85px;
 }
 
