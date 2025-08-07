@@ -489,3 +489,23 @@ document.addEventListener("click", function (e) {
     boxUsuario.style.display = "none";
   }
 });
+
+// 3d
+
+const logo = document.querySelector(".logo-3d-interativa");
+const cena = document.querySelector(".cena-3d");
+
+cena.addEventListener("mousemove", (e) => {
+  const { width, height, left, top } = cena.getBoundingClientRect();
+  const x = e.clientX - left;
+  const y = e.clientY - top;
+
+  const rotateY = (x / width - 0.5) * 30; // até 30 graus pra esquerda/direita
+  const rotateX = (y / height - 0.5) * -30; // até 30 graus pra cima/baixo
+
+  logo.style.transform = `rotateY(${rotateY}deg) rotateX(${rotateX}deg)`;
+});
+
+cena.addEventListener("mouseleave", () => {
+  logo.style.transform = `rotateY(0deg) rotateX(0deg)`;
+});
