@@ -33,7 +33,6 @@ const overlay = document.querySelector(".menu-overlay");
 const menuItems = document.querySelectorAll(".menu li");
 const contents = document.querySelectorAll(".menu-content");
 
-// Mostrar overlay e conteúdo ao passar o mouse sobre o item
 menuItems.forEach((item) => {
   item.addEventListener("mouseenter", () => {
     const target = item.getAttribute("data-menu");
@@ -70,7 +69,7 @@ menuItems.forEach((item) => {
   item.addEventListener("mouseenter", () => {
     const target = item.getAttribute("data-menu");
     overlay.style.display = "block";
-    header.classList.add("overlay-ativo"); // aplica no header
+    header.classList.add("overlay-ativo");
 
     contents.forEach((c) => (c.style.display = "none"));
     const content = document.getElementById("menu-" + target);
@@ -229,14 +228,12 @@ function mostrarProdutos(termo) {
 // fundo borrado quando abrir a pesquisa ___________________________________________________________________________________
 const fundoEscuro = document.getElementById("fundoEscuro");
 
-// Abrir
 abrirBusca.addEventListener("click", () => {
   barraPesquisa.style.display = "block";
   fundoEscuro.style.display = "block";
   inputBusca.focus();
 });
 
-// Fechar
 function fecharBarraPesquisa() {
   barraPesquisa.style.display = "none";
   fundoEscuro.style.display = "none";
@@ -450,7 +447,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-// cor selecionada
+// cor selecionada ___________________________________________________________
 document.querySelectorAll(".opcoes-cor").forEach(function (grupoCor) {
   const botoes = grupoCor.querySelectorAll(".btn-cor");
 
@@ -462,7 +459,7 @@ document.querySelectorAll(".opcoes-cor").forEach(function (grupoCor) {
   });
 });
 
-// Seleção de tamanho
+// Seleção de tamanho _________________________________________________________________
 document.querySelectorAll(".opcoes-tamanho").forEach(function (grupoTamanho) {
   const botoes = grupoTamanho.querySelectorAll(".btn-tamanho");
 
@@ -483,16 +480,15 @@ btnUsuario.addEventListener("click", function () {
     boxUsuario.style.display === "block" ? "none" : "block";
 });
 
-// Fecha ao clicar fora
 document.addEventListener("click", function (e) {
   if (!boxUsuario.contains(e.target) && !btnUsuario.contains(e.target)) {
     boxUsuario.style.display = "none";
   }
 });
 
-// 3d
+// 3d ______________________________________________________________________________
 
-const logo = document.querySelector(".logo-3d-interativa");
+const logo = document.querySelector(".foto-3d-interativa");
 const cena = document.querySelector(".cena-3d");
 
 cena.addEventListener("mousemove", (e) => {
@@ -500,8 +496,8 @@ cena.addEventListener("mousemove", (e) => {
   const x = e.clientX - left;
   const y = e.clientY - top;
 
-  const rotateY = (x / width - 0.5) * 30; // até 30 graus pra esquerda/direita
-  const rotateX = (y / height - 0.5) * -30; // até 30 graus pra cima/baixo
+  const rotateY = (x / width - 0.5) * 80;
+  const rotateX = (y / height - 0.5) * -80;
 
   logo.style.transform = `rotateY(${rotateY}deg) rotateX(${rotateX}deg)`;
 });
@@ -560,17 +556,24 @@ titulos.forEach((titulo) => {
   titulo.addEventListener("click", (e) => {
     e.stopPropagation();
 
-    // Alterna visibilidade
     links.classList.toggle("ativo");
     titulo.classList.toggle("ativo");
   });
 });
 
-// Fecha tudo ao clicar fora
 document.addEventListener("click", () => {
   titulos.forEach((titulo) => {
     const links = titulo.nextElementSibling;
     links.classList.remove("ativo");
     titulo.classList.remove("ativo");
   });
+});
+
+// parar video do sobre ____________________________________________________________
+const video = document.getElementById("video-topo");
+
+video.addEventListener("ended", () => {
+  video.pause();
+  video.currentTime = video.duration;
+  video.controls = false;
 });

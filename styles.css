@@ -691,28 +691,6 @@ header.overlay-ativo .menu-icones li {
   left: 20%;
 }
 
-.home-imagens img {
-  width: 70%;
-  height: auto;
-  object-fit: cover;
-  border-radius: 50px;
-}
-
-.cena-3d {
-  perspective: 1000px;
-  width: 250px;
-  height: 250px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.logo-3d-interativa {
-  width: 200px;
-  transform-style: preserve-3d;
-  transition: transform 0.1s linear;
-}
-
 /* pagina 2 __________________________________________________________________ */
 .pagina2 {
   position: relative;
@@ -918,7 +896,7 @@ header.overlay-ativo .menu-icones li {
   background: linear-gradient(to right, #5a2a7a 50%, #000000 50%);
 }
 .btn-cor.amarelo {
-  color: rgb(221, 236, 10);
+  background-color: rgb(251, 255, 0);
 }
 .btn-cor.verde-roxo {
   background: linear-gradient(to right, #b0e6c8 50%, #7c4d9e 50%);
@@ -1089,7 +1067,7 @@ header.overlay-ativo .menu-icones li {
   flex-direction: column;
   position: relative;
   flex-shrink: 0;
-  margin-top: 100px;
+  margin-top: 200px;
 }
 
 .market img {
@@ -1205,12 +1183,97 @@ header.overlay-ativo .menu-icones li {
   background-color: #128c7e;
 }
 
+/* sexta pagina _____________________________________________________________________ */
+
+.sobre-container {
+  position: relative;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 450px;
+}
+
+.sobre {
+  display: flex;
+  width: 100%;
+  padding: 300px;
+}
+
+.cena-3d {
+  perspective: 1000px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  left: 10%;
+  top: 10%;
+}
+
+.foto-3d-interativa {
+  width: auto;
+  height: auto;
+  border: 5px solid #ff69b4;
+  border-radius: 200px;
+  object-fit: cover;
+  image-rendering: crisp-edges;
+  box-shadow: 0 0 25px #ff69b4;
+  transform-style: preserve-3d;
+  transition: transform 0.1s linear;
+}
+
+.foto-3d-interativa {
+  width: 400px;
+  transform-style: preserve-3d;
+  transition: transform 0.1s linear;
+}
+
+.sobre-conteudo {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  color: rgb(255, 255, 255);
+  position: absolute;
+  left: 50%;
+  top: 32%;
+}
+
+.nome-sobre {
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.sobre-contatos ul {
+  display: flex;
+  gap: 10px;
+}
+
+.garantia {
+  font-size: 20px;
+  max-width: 600px;
+}
+
+.data {
+  font-size: 20px;
+  max-width: 500px;
+}
+
+.sobre-contatos {
+  font-size: 20px;
+}
+.sobre-contatos a {
+  font-size: 30px;
+  color: rgb(255, 255, 255);
+  transition: 0.3s;
+}
+
 /* rodapé __________________________________________________________________________ */
 
 footer {
   height: 60%;
   padding: 200px 20px;
-  margin-top: 100px;
+  margin-top: 400px;
 }
 
 .footer-container {
@@ -1334,10 +1397,7 @@ footer {
 
 @media screen and (max-width: 826px) {
   .menu ul,
-  .fundoEscuro2 {
-    display: none;
-  }
-
+  .fundoEscuro2,
   .hover-box {
     display: none !important;
   }
@@ -1642,17 +1702,95 @@ footer {
     top: 5%;
   }
 
-  /* rodapé __________________________________________________________________________ */
-
-  footer {
-    height: 90%;
-    padding: 200px 20px;
-    margin-top: 100px;
+  /* sexta pagina _____________________________________________________________________ */
+  .sobre-container {
+    position: relative;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 450px;
   }
+
+  .sobre {
+    display: flex;
+    width: 100%;
+    padding: 300px;
+  }
+
+  .cena-3d {
+    perspective: 1000px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: 10%;
+    top: 10%;
+  }
+
+  .foto-3d-interativa {
+    width: auto;
+    height: auto;
+    border: 5px solid #ff69b4;
+    border-radius: 200px;
+    object-fit: cover;
+    image-rendering: crisp-edges;
+    box-shadow: 0 0 25px #ff69b4;
+    transform-style: preserve-3d;
+    transition: transform 0.1s linear;
+  }
+
+  .foto-3d-interativa {
+    width: 400px;
+    transform-style: preserve-3d;
+    transition: transform 0.1s linear;
+  }
+
+  .sobre-conteudo {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    color: rgb(255, 255, 255);
+    position: absolute;
+    left: 50%;
+    top: 32%;
+  }
+
+  .nome-sobre {
+    font-size: 40px;
+    font-weight: bold;
+  }
+
+  .sobre-contatos ul {
+    display: flex;
+    gap: 10px;
+  }
+
+  .garantia {
+    font-size: 20px;
+    max-width: 600px;
+  }
+
+  .data {
+    font-size: 20px;
+    max-width: 500px;
+  }
+
+  .sobre-contatos {
+    font-size: 20px;
+  }
+  .sobre-contatos a {
+    font-size: 30px;
+    color: rgb(255, 255, 255);
+    transition: 0.3s;
+  }
+  /* rodapé __________________________________________________________________________ */
 
   .footer-container {
     position: relative;
     height: 50vh;
+    margin-top: 100px;
   }
 
   .links-rapido {
@@ -1698,7 +1836,7 @@ footer {
   .contribuicao {
     font-size: 10px;
     margin-left: 0px;
-    margin-top: 80px;
+    margin-top: 72px;
   }
 
   .contribuicao img {
@@ -1708,7 +1846,7 @@ footer {
   .direitos {
     position: absolute;
     left: 22%;
-    margin-top: -47px;
+    margin-top: -50px;
   }
 
   .direitos i {
