@@ -509,3 +509,68 @@ cena.addEventListener("mousemove", (e) => {
 cena.addEventListener("mouseleave", () => {
   logo.style.transform = `rotateY(0deg) rotateX(0deg)`;
 });
+
+// menu responsivo __________________________________________________________________
+const iconeMenu = document.getElementById("iconeMenu");
+const menuLateral = document.querySelector(".menu-lateral");
+const setaToggle = document.querySelector(".seta-toggle");
+const linksExpandidos = document.querySelector(".links-expandidos");
+const linhaBaixo = document.querySelector(".linha-baixo");
+
+iconeMenu.addEventListener("click", (e) => {
+  e.stopPropagation();
+
+  menuLateral.classList.toggle("active");
+
+  if (menuLateral.classList.contains("active")) {
+    iconeMenu.classList.remove("bx-menu");
+    iconeMenu.classList.add("bx-x");
+    iconeMenu.classList.add("menu-aberto");
+  } else {
+    iconeMenu.classList.remove("bx-x");
+    iconeMenu.classList.add("bx-menu");
+    iconeMenu.classList.remove("menu-aberto");
+  }
+});
+
+setaToggle.addEventListener("click", () => {
+  const isOpen = linksExpandidos.style.maxHeight === "200px";
+
+  if (isOpen) {
+    linksExpandidos.style.maxHeight = "0";
+    linksExpandidos.style.opacity = "0";
+    linhaBaixo.style.transform = "translateY(0)";
+    setaToggle.classList.remove("bx-chevron-down");
+    setaToggle.classList.add("bx-chevron-right");
+  } else {
+    linksExpandidos.style.maxHeight = "200px";
+    linksExpandidos.style.opacity = "1";
+    linhaBaixo.style.transform = "translateY(20px)";
+    setaToggle.classList.remove("bx-chevron-right");
+    setaToggle.classList.add("bx-chevron-down");
+  }
+});
+
+const titulos = document.querySelectorAll(".titulo-menu");
+
+titulos.forEach((titulo) => {
+  const links = titulo.nextElementSibling;
+  const seta = titulo.querySelector(".seta-toggle");
+
+  titulo.addEventListener("click", (e) => {
+    e.stopPropagation();
+
+    // Alterna visibilidade
+    links.classList.toggle("ativo");
+    titulo.classList.toggle("ativo");
+  });
+});
+
+// Fecha tudo ao clicar fora
+document.addEventListener("click", () => {
+  titulos.forEach((titulo) => {
+    const links = titulo.nextElementSibling;
+    links.classList.remove("ativo");
+    titulo.classList.remove("ativo");
+  });
+});
