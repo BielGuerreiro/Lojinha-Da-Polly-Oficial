@@ -96,6 +96,7 @@ header {
   left: 20px;
   z-index: 1;
   cursor: pointer;
+  display: none;
 }
 
 #iconeMenu {
@@ -307,7 +308,7 @@ header.overlay-ativo .menu-icones li {
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   display: none;
-  z-index: 1000;
+  z-index: 5;
 }
 
 .barra-pesquisa input {
@@ -816,6 +817,7 @@ header.overlay-ativo .menu-icones li {
 .coracao-responsivo {
   position: absolute;
   top: 74%;
+  color: red;
   right: 2%;
   z-index: 1;
   border-radius: 50%;
@@ -901,11 +903,40 @@ header.overlay-ativo .menu-icones li {
 }
 
 .btn-cor.azul {
-  background-color: blue;
+  background-color: #4a90e2;
 }
-
 .btn-cor.vermelho {
   background-color: red;
+}
+.btn-cor.dourado {
+  background-color: rgb(243, 187, 32);
+}
+.btn-cor.rosa {
+  background-color: #fadadd;
+}
+.btn-cor.preto-roxo {
+  background: linear-gradient(to right, #5a2a7a 50%, #000000 50%);
+}
+.btn-cor.amarelo {
+  color: rgb(221, 236, 10);
+}
+.btn-cor.verde-roxo {
+  background: linear-gradient(to right, #b0e6c8 50%, #7c4d9e 50%);
+}
+.btn-cor.roxo-rosa {
+  background: linear-gradient(to right, #e973df 50%, #4b0082 50%);
+}
+.btn-cor.azul-vermelho {
+  background: linear-gradient(to right, #1e90ff 50%, #ff2d55 50%);
+}
+.btn-cor.azul-rosa {
+  background: linear-gradient(to right, #40e0d0 50%, #ff69b4 50%);
+}
+.btn-cor.roxo-roxo {
+  background: linear-gradient(to right, #8000a0 50%, #a64ca6 50%);
+}
+.btn-cor.roxo-verde {
+  background: linear-gradient(to right, #800080 50%, #10aaaa 50%);
 }
 
 .quantidade {
@@ -1286,13 +1317,14 @@ footer {
 .shope img {
   width: 70px;
   height: auto;
-  margin-left: -18px;
+  margin-left: -20px;
 }
 
 .mercado img {
   width: 90px;
   height: auto;
-  margin-left: -1px;
+  margin-top: -25px;
+  margin-left: -29px;
 }
 
 .bxs-chevron-right {
@@ -1312,7 +1344,7 @@ footer {
 
   .logo img {
     width: 20%;
-    left: 40%;
+    left: 35%;
     top: -1%;
   }
 
@@ -1338,13 +1370,13 @@ footer {
   /* barra de pesquisa _______________________________________________________________________________ */
   .barra-pesquisa {
     width: 100%;
-    height: 15%;
+    height: 17%;
     border-radius: 5px;
-    z-index: 5;
+    z-index: 8;
   }
 
   .barra-pesquisa input {
-    width: 70%;
+    width: 75%;
     height: 45%;
     margin-left: 10px;
     margin-top: 20px;
@@ -1362,7 +1394,7 @@ footer {
   }
 
   .fechar-pesquisa {
-    top: 5px;
+    top: 10px;
   }
 
   #fundoEscuro {
@@ -1532,6 +1564,10 @@ footer {
     font-size: 20px;
   }
 
+  .quebra-mobile {
+    display: block;
+  }
+
   .preco-produto {
     font-size: 25px;
     margin-left: 5px;
@@ -1544,10 +1580,6 @@ footer {
 
   .coracao-responsivo {
     display: block;
-  }
-
-  .coracao {
-    display: none; /* esconde o coração padrão no mobile */
   }
 
   /* terceiro __________________________________________________________________________ */
@@ -1666,7 +1698,7 @@ footer {
   .contribuicao {
     font-size: 10px;
     margin-left: 0px;
-    margin-top: 90px;
+    margin-top: 80px;
   }
 
   .contribuicao img {

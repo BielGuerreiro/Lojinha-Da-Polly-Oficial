@@ -649,7 +649,7 @@ main {
 }
 
 .verde {
-  background-color: rgb(250, 119, 206);
+  background: linear-gradient(to right, #ff69b4 50%, #1e90ff 50%);
 }
 
 .botao-cor.selecionado {
