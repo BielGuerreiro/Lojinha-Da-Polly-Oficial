@@ -491,18 +491,34 @@ document.addEventListener("click", function (e) {
 const logo = document.querySelector(".foto-3d-interativa");
 const cena = document.querySelector(".cena-3d");
 
+function aplicarRotacao(x, y, width, height) {
+  const rotateY = (x / width - 0.5) * 80;
+  const rotateX = (y / height - 0.5) * -80;
+  logo.style.transform = `rotateY(${rotateY}deg) rotateX(${rotateX}deg)`;
+}
+
+// Mouse
 cena.addEventListener("mousemove", (e) => {
   const { width, height, left, top } = cena.getBoundingClientRect();
   const x = e.clientX - left;
   const y = e.clientY - top;
-
-  const rotateY = (x / width - 0.5) * 80;
-  const rotateX = (y / height - 0.5) * -80;
-
-  logo.style.transform = `rotateY(${rotateY}deg) rotateX(${rotateX}deg)`;
+  aplicarRotacao(x, y, width, height);
 });
 
 cena.addEventListener("mouseleave", () => {
+  logo.style.transform = `rotateY(0deg) rotateX(0deg)`;
+});
+
+// Touch
+cena.addEventListener("touchmove", (e) => {
+  const touch = e.touches[0];
+  const { width, height, left, top } = cena.getBoundingClientRect();
+  const x = touch.clientX - left;
+  const y = touch.clientY - top;
+  aplicarRotacao(x, y, width, height);
+});
+
+cena.addEventListener("touchend", () => {
   logo.style.transform = `rotateY(0deg) rotateX(0deg)`;
 });
 

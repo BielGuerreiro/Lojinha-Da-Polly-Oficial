@@ -357,7 +357,7 @@ header.overlay-ativo .menu-icones li {
 
 #fundoEscuro {
   position: fixed;
-  top: 0;
+  top: 70px;
   left: 0;
   width: 100vw;
   height: 100vh;
@@ -1103,6 +1103,7 @@ header.overlay-ativo .menu-icones li {
   cursor: pointer;
   border-radius: 50%;
   z-index: 1;
+  margin-top: 120px;
 }
 
 .arrow:hover {
@@ -1187,17 +1188,15 @@ header.overlay-ativo .menu-icones li {
 
 .sobre-container {
   position: relative;
-  height: 400px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: 450px;
+  margin-top: 100px;
 }
 
 .sobre {
   display: flex;
   width: 100%;
-  padding: 300px;
 }
 
 .cena-3d {
@@ -1207,7 +1206,7 @@ header.overlay-ativo .menu-icones li {
   justify-content: center;
   position: absolute;
   left: 10%;
-  top: 10%;
+  top: 20%;
 }
 
 .foto-3d-interativa {
@@ -1236,7 +1235,7 @@ header.overlay-ativo .menu-icones li {
   color: rgb(255, 255, 255);
   position: absolute;
   left: 50%;
-  top: 32%;
+  top: 28%;
 }
 
 .nome-sobre {
@@ -1273,7 +1272,7 @@ header.overlay-ativo .menu-icones li {
 footer {
   height: 60%;
   padding: 200px 20px;
-  margin-top: 400px;
+  margin-top: 100px;
 }
 
 .footer-container {
@@ -1397,7 +1396,10 @@ footer {
 
 @media screen and (max-width: 826px) {
   .menu ul,
-  .fundoEscuro2,
+  .fundoEscuro2 {
+    display: none;
+  }
+
   .hover-box {
     display: none !important;
   }
@@ -1704,93 +1706,70 @@ footer {
 
   /* sexta pagina _____________________________________________________________________ */
   .sobre-container {
-    position: relative;
-    height: 400px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-top: 450px;
+    flex-direction: column;
+    margin-top: 100px;
+    height: auto;
+    background-color: #000;
+    padding-bottom: 10px;
+  }
+
+  .video-topo video {
+    width: 100%;
+    height: 250px;
+    max-height: 300px;
   }
 
   .sobre {
-    display: flex;
-    width: 100%;
-    padding: 300px;
+    flex-direction: column;
+    padding: 20px;
+    align-items: center;
+    text-align: center;
   }
 
   .cena-3d {
-    perspective: 1000px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    left: 10%;
-    top: 10%;
+    position: static;
+    margin-bottom: 10px;
+    margin-top: -100px;
   }
 
   .foto-3d-interativa {
-    width: auto;
+    width: 200px;
     height: auto;
-    border: 5px solid #ff69b4;
-    border-radius: 200px;
-    object-fit: cover;
-    image-rendering: crisp-edges;
-    box-shadow: 0 0 25px #ff69b4;
-    transform-style: preserve-3d;
-    transition: transform 0.1s linear;
-  }
-
-  .foto-3d-interativa {
-    width: 400px;
-    transform-style: preserve-3d;
-    transition: transform 0.1s linear;
+    border-width: 3px;
+    border-radius: 100px;
   }
 
   .sobre-conteudo {
-    flex: 2;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    color: rgb(255, 255, 255);
-    position: absolute;
-    left: 50%;
-    top: 32%;
-  }
-
-  .nome-sobre {
-    font-size: 40px;
-    font-weight: bold;
-  }
-
-  .sobre-contatos ul {
-    display: flex;
+    position: static;
+    left: auto;
+    top: auto;
     gap: 10px;
   }
 
-  .garantia {
-    font-size: 20px;
-    max-width: 600px;
-  }
-
-  .data {
-    font-size: 20px;
-    max-width: 500px;
-  }
-
-  .sobre-contatos {
-    font-size: 20px;
-  }
-  .sobre-contatos a {
-    font-size: 30px;
+  .nome-sobre {
+    font-size: 24px;
     color: rgb(255, 255, 255);
-    transition: 0.3s;
   }
+
+  .garantia,
+  .data,
+  .sobre-contatos {
+    font-size: 16px;
+    max-width: 100%;
+    color: rgb(255, 255, 255);
+  }
+
+  .sobre-contatos ul {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
   /* rodapé __________________________________________________________________________ */
 
   .footer-container {
     position: relative;
     height: 50vh;
-    margin-top: 100px;
+    margin-top: -80px;
   }
 
   .links-rapido {
@@ -1834,13 +1813,19 @@ footer {
   }
 
   .contribuicao {
-    font-size: 10px;
-    margin-left: 0px;
-    margin-top: 72px;
+    position: relative;
+    top: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1200px;
+    text-align: center;
+    color: white;
+    font-size: 25px;
   }
 
   .contribuicao img {
     width: 20%;
+    margin-left: -280px;
   }
 
   .direitos {
@@ -1866,7 +1851,7 @@ footer {
   }
 
   .mercado img {
-    width: 80px;
+    width: 70px;
     margin-left: -25px;
     margin-top: -20px;
   }
