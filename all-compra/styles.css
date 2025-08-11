@@ -1,0 +1,137 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+
+:root {
+  --main-color: white;
+  --secundary-color: #c0bbbb;
+  --tertiary-color: #6fa9e4;
+}
+
+body {
+  background: var(--main-color);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.politica-container {
+  background-color: var(--main-color);
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.8);
+  max-width: 1200px;
+  width: 100%;
+  text-align: left;
+  overflow-y: auto;
+}
+
+.politica-container h2 {
+  margin-bottom: 20px;
+  color: var(--tertiary-color);
+  text-align: center;
+}
+
+.produto-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+  padding: 15px 0;
+}
+
+.produto-info {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.produto-info img {
+  width: 80px;
+  height: auto;
+  border-radius: 8px;
+}
+
+.produto-detalhes {
+  font-size: 14px;
+}
+
+.produto-preco {
+  font-weight: bold;
+  font-size: 16px;
+  color: #333;
+}
+
+.total-geral {
+  margin-top: 20px;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: right;
+  border-top: 2px solid #000;
+  padding-top: 10px;
+}
+
+.finalizar-compra {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.finalizar-compra img {
+  width: 150px;
+  height: auto;
+}
+
+.btn-finalizar {
+  margin-top: 10px;
+  padding: 15px 40px;
+  color: #000;
+  border: 1px solid #000;
+  background-color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.btn-finalizar:hover {
+  background-color: #000;
+  color: white;
+}
+
+.texto {
+  margin-top: 10px;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 14px;
+}
+
+.footer {
+  margin-top: 30px;
+  font-size: 12px;
+  color: #777;
+  text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+  .produto-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .produto-preco {
+    margin-top: 5px;
+  }
+
+  .total-geral {
+    text-align: left;
+  }
+
+  .btn-finalizar {
+    width: 100%;
+  }
+}

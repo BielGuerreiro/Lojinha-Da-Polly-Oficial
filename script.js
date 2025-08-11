@@ -245,7 +245,7 @@ function fecharBarraPesquisa() {
 fecharPesquisa.addEventListener("click", fecharBarraPesquisa);
 fundoEscuro.addEventListener("click", fecharBarraPesquisa);
 
-/* icones favorito e carrinho _____________________________________________________________ */
+/* barra lateral carrinho _____________________________________________________________ */
 document.addEventListener("DOMContentLoaded", function () {
   const heartIcon = document.getElementById("heart");
   const favoritos = document.getElementById("favoritos");
@@ -267,7 +267,7 @@ document.addEventListener("DOMContentLoaded", function () {
   fundoEscuro.addEventListener("click", fecharTudo);
   closeFavoritos.addEventListener("click", fecharTudo);
 
-  heartIcon.addEventListener("click", function (event) {
+  heartIcon?.addEventListener("click", function (event) {
     event.preventDefault();
     favoritos.classList.add("active");
     fundoEscuro.style.display = "block";
@@ -367,25 +367,32 @@ document.addEventListener("DOMContentLoaded", function () {
       const produtoWrapper = btn.closest(".produto-wrapper");
       const imagem = produtoWrapper.querySelector("img").getAttribute("src");
       const preco = produtoWrapper.querySelector(".preco-produto").textContent;
-
       const quantidadeEl = produtoWrapper.querySelector(".valor-quantidade");
       const quantidade = quantidadeEl ? quantidadeEl.textContent.trim() : "1";
 
-      const corSelecionada = produtoWrapper.querySelector(
-        ".btn-cor.selecionado"
-      );
+      let corSelecionada = produtoWrapper.querySelector(".btn-cor.selecionado");
+      if (!corSelecionada) {
+        corSelecionada = produtoWrapper.querySelector(".btn-cor");
+        if (corSelecionada) corSelecionada.classList.add("selecionado");
+      }
       const cor = corSelecionada
         ? corSelecionada.classList.contains("azul")
           ? "Azul"
-          : "Vermelho"
-        : "Não selecionada";
+          : corSelecionada.classList.contains("vermelho")
+          ? "Vermelho"
+          : "Cor padrão"
+        : "Não disponível";
 
-      const tamanhoSelecionado = produtoWrapper.querySelector(
+      let tamanhoSelecionado = produtoWrapper.querySelector(
         ".btn-tamanho.selecionado"
       );
+      if (!tamanhoSelecionado) {
+        tamanhoSelecionado = produtoWrapper.querySelector(".btn-tamanho");
+        if (tamanhoSelecionado) tamanhoSelecionado.classList.add("selecionado");
+      }
       const tamanho = tamanhoSelecionado
         ? tamanhoSelecionado.getAttribute("data-tamanho")
-        : "Não selecionado";
+        : "Não disponível";
 
       adicionarFavorito(imagem, preco, quantidade, cor, tamanho);
       favoritos.classList.add("active");
@@ -393,14 +400,8 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  const btnFinalizar = document.getElementById("btn-finalizar");
-  btnFinalizar.addEventListener("click", function () {
-    alert("Compra finalizada! (Aqui você pode redirecionar para o checkout)");
-  });
-
   document.querySelectorAll(".opcoes-cor").forEach(function (grupoCor) {
     const botoes = grupoCor.querySelectorAll(".btn-cor");
-
     botoes.forEach(function (botao) {
       botao.addEventListener("click", function () {
         botoes.forEach((b) => b.classList.remove("selecionado"));
@@ -411,7 +412,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   document.querySelectorAll(".opcoes-tamanho").forEach(function (grupoTamanho) {
     const botoes = grupoTamanho.querySelectorAll(".btn-tamanho");
-
     botoes.forEach(function (botao) {
       botao.addEventListener("click", function () {
         botoes.forEach((b) => b.classList.remove("selecionado"));
@@ -445,29 +445,10 @@ document.addEventListener("DOMContentLoaded", function () {
         }
       });
     });
-});
 
-// cor selecionada ___________________________________________________________
-document.querySelectorAll(".opcoes-cor").forEach(function (grupoCor) {
-  const botoes = grupoCor.querySelectorAll(".btn-cor");
-
-  botoes.forEach(function (botao) {
-    botao.addEventListener("click", function () {
-      botoes.forEach((b) => b.classList.remove("selecionado"));
-      botao.classList.add("selecionado");
-    });
-  });
-});
-
-// Seleção de tamanho _________________________________________________________________
-document.querySelectorAll(".opcoes-tamanho").forEach(function (grupoTamanho) {
-  const botoes = grupoTamanho.querySelectorAll(".btn-tamanho");
-
-  botoes.forEach(function (botao) {
-    botao.addEventListener("click", function () {
-      botoes.forEach((b) => b.classList.remove("selecionado"));
-      botao.classList.add("selecionado");
-    });
+  const btnFinalizar = document.getElementById("btn-finalizar");
+  btnFinalizar.addEventListener("click", function () {
+    alert("Compra finalizada!");
   });
 });
 
@@ -592,4 +573,65 @@ video.addEventListener("ended", () => {
   video.pause();
   video.currentTime = video.duration;
   video.controls = false;
+});
+
+// area de comprar __________________________________________________________________________
+document.querySelectorAll(".btn-comprar").forEach(function (botao) {
+  botao.addEventListener("click", function (e) {
+    e.preventDefault();
+
+    const produtoWrapper = botao.closest(".produto-wrapper");
+
+    const nome =
+      produtoWrapper.querySelector(".nome-produto")?.textContent.trim() ||
+      "Produto";
+
+    const imagem = produtoWrapper.querySelector("img")?.src || "";
+
+    const precoTexto =
+      produtoWrapper.querySelector(".preco-produto")?.textContent.trim() ||
+      "R$ 0,00";
+    const preco = parseFloat(precoTexto.replace("R$", "").replace(",", "."));
+
+    const quantidadeEl = produtoWrapper.querySelector(".valor-quantidade");
+    const quantidade = quantidadeEl
+      ? parseInt(quantidadeEl.textContent.trim())
+      : 1;
+
+    let corSelecionada = produtoWrapper.querySelector(".btn-cor.selecionado");
+    if (!corSelecionada) {
+      corSelecionada = produtoWrapper.querySelector(".btn-cor");
+      if (corSelecionada) corSelecionada.classList.add("selecionado");
+    }
+
+    let cor = "Não disponível";
+    if (corSelecionada) {
+      const classes = Array.from(corSelecionada.classList);
+      cor =
+        classes.find((c) => c !== "btn-cor" && c !== "selecionado") ||
+        "Cor padrão";
+      cor = cor.charAt(0).toUpperCase() + cor.slice(1);
+    }
+
+    let tamanhoSelecionado = produtoWrapper.querySelector(
+      ".btn-tamanho.selecionado"
+    );
+    if (!tamanhoSelecionado) {
+      tamanhoSelecionado = produtoWrapper.querySelector(".btn-tamanho");
+      if (tamanhoSelecionado) tamanhoSelecionado.classList.add("selecionado");
+    }
+    const tamanho = tamanhoSelecionado
+      ? tamanhoSelecionado.getAttribute("data-tamanho")
+      : "Não disponível";
+
+    const url = new URL("compra/index.html", window.location.origin);
+    url.searchParams.set("produto", nome);
+    url.searchParams.set("imagem", imagem);
+    url.searchParams.set("preco", preco.toFixed(2));
+    url.searchParams.set("quantidade", quantidade);
+    url.searchParams.set("cor", cor);
+    url.searchParams.set("tamanho", tamanho);
+
+    window.location.href = url.toString();
+  });
 });

@@ -363,7 +363,7 @@ header.overlay-ativo .menu-icones li {
   height: 100vh;
   background: rgba(0, 0, 0, 0.4);
   display: none;
-  z-index: 10;
+  z-index: 1;
 }
 
 /* produtos pesquisa __________________________________________________________________ */
@@ -378,7 +378,7 @@ header.overlay-ativo .menu-icones li {
   overflow-y: auto;
   background-color: white;
   border-top: 1px solid #ccc;
-  z-index: 2;
+  z-index: 5;
   display: none;
   padding: 20px;
   border-radius: 8px;
@@ -629,6 +629,8 @@ header.overlay-ativo .menu-icones li {
   position: absolute;
   left: 16%;
   top: 27%;
+  align-content: center;
+  text-align: center;
 }
 
 #btn-finalizar:hover {
@@ -1372,8 +1374,13 @@ footer {
 
 .direitos {
   position: absolute;
-  left: 28%;
+  left: 27%;
   margin-top: -85px;
+}
+
+.direitos i {
+  color: #777;
+  font-size: 20px;
 }
 
 .shope img {
@@ -1387,11 +1394,6 @@ footer {
   height: auto;
   margin-top: -25px;
   margin-left: -29px;
-}
-
-.bxs-chevron-right {
-  color: #000;
-  font-size: 35px;
 }
 
 @media screen and (max-width: 826px) {

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Finalizar Compra</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="shortcut icon" href="../img/logo.png" type="image/x-icon" />
+  </head>
+  <body>
+    <div class="politica-container">
+      <h2>Resumo da Compra</h2>
+
+      <div class="produto-detalhes">
+        <img id="produto-img" alt="Imagem do produto" />
+        <p><strong>Produto:</strong> <span id="produto-nome"></span></p>
+        <p><strong>Cor:</strong> <span id="produto-cor"></span></p>
+        <p><strong>Tamanho:</strong> <span id="produto-tamanho"></span></p>
+        <p>
+          <strong>Quantidade:</strong> <span id="produto-quantidade"></span>
+        </p>
+        <p>
+          <strong>Preço unitário:</strong> R$ <span id="produto-preco"></span>
+        </p>
+        <p><strong>Total:</strong> R$ <span id="produto-total"></span></p>
+      </div>
+
+      <div class="finalizar-compra">
+        <div class="logo">
+          <img src="../img/logo.png" alt="" />
+        </div>
+        <button class="btn-finalizar" onclick="enviarParaWhatsApp()">
+          Finalizar Compra
+        </button>
+        <div class="texto">
+          <div
+            style="
+              background-color: #f0f8ff;
+              border-left: 4px solid #007bff;
+              padding: 15px;
+              font-family: Arial, sans-serif;
+            "
+          >
+            <p>
+              🔔 Ao clicar em <strong>“Finalizar Compra”</strong>, você será
+              direcionado ao nosso WhatsApp. Lá, vai informar o que deseja,
+              escolher a forma de pagamento (Pix ou boleto) e combinar a
+              entrega. Atendimento rápido e direto com nossa equipe! 💬
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer">
+        © 2025 - BielGuerreiro. Todos os direitos reservados.
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
