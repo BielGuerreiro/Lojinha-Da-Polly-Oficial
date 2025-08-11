@@ -624,7 +624,7 @@ document.querySelectorAll(".btn-comprar").forEach(function (botao) {
       ? tamanhoSelecionado.getAttribute("data-tamanho")
       : "Não disponível";
 
-    const url = new URL("compra/index.html", window.location.origin);
+    const url = new URL("compra/index.html", document.baseURI);
     url.searchParams.set("produto", nome);
     url.searchParams.set("imagem", imagem);
     url.searchParams.set("preco", preco.toFixed(2));
@@ -635,3 +635,5 @@ document.querySelectorAll(".btn-comprar").forEach(function (botao) {
     window.location.href = url.toString();
   });
 });
+
+//

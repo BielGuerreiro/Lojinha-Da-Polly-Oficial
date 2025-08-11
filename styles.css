@@ -1731,7 +1731,7 @@ footer {
   .cena-3d {
     position: static;
     margin-bottom: 10px;
-    margin-top: -100px;
+    margin-top: -190px;
   }
 
   .foto-3d-interativa {
@@ -1816,7 +1816,7 @@ footer {
 
   .contribuicao {
     position: relative;
-    top: 300px;
+    top: 280px;
     margin-left: auto;
     margin-right: auto;
     max-width: 1200px;
