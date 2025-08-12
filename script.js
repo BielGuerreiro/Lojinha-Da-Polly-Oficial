@@ -105,7 +105,7 @@ fecharPesquisa.addEventListener("click", () => {
   barraPesquisa.style.display = "none";
 });
 
-// conjuntos da barra de pesquisa ______________________________________________________// ________
+// conjuntos da barra de pesquisa ______________________________________________________
 
 const produtos = [
   {
@@ -309,7 +309,14 @@ document.addEventListener("DOMContentLoaded", function () {
     precoTotalEl.textContent = precoFormatado;
   }
 
-  function adicionarFavorito(imagemUrl, precoTexto, quantidade, cor, tamanho) {
+  function adicionarFavorito(
+    imagemUrl,
+    precoTexto,
+    quantidade,
+    cor,
+    tamanho,
+    nome
+  ) {
     const produtos = lateralFavoritos.querySelectorAll(".produto-favorito");
 
     for (let produto of produtos) {
@@ -336,15 +343,16 @@ document.addEventListener("DOMContentLoaded", function () {
     produto.classList.add("produto-favorito");
 
     produto.innerHTML = `
-      <img src="${imagemUrl}" alt="Produto Favorito" class="imagem-favorito">
-      <div class="info-favorito">
-        <p class="preco">${precoTexto}</p>
-        <p class="cor-favorito"><strong>Cor:</strong> ${cor}</p>
-        <p class="tamanho-favorito"><strong>Tamanho:</strong> ${tamanho}</p>
-        <p class="quantidade-favorito"><strong>Quantidade:</strong> ${quantidade}</p>
-        <span class="desfavoritar"><i class='bx bx-trash'></i></span>
-      </div>
-    `;
+  <img src="${imagemUrl}" alt="Produto Favorito" class="imagem-favorito">
+  <div class="info-favorito">
+    <p class="nome-produto"><strong>Produto:</strong> ${nome}</p>
+    <p class="preco">${precoTexto}</p>
+    <p class="cor-favorito"><strong>Cor:</strong> ${cor}</p>
+    <p class="tamanho-favorito"><strong>Tamanho:</strong> ${tamanho}</p>
+    <p class="quantidade-favorito"><strong>Quantidade:</strong> ${quantidade}</p>
+    <span class="desfavoritar"><i class='bx bx-trash'></i></span>
+  </div>
+`;
 
     lateralFavoritos.appendChild(produto);
     atualizarContador();
@@ -367,6 +375,9 @@ document.addEventListener("DOMContentLoaded", function () {
       const produtoWrapper = btn.closest(".produto-wrapper");
       const imagem = produtoWrapper.querySelector("img").getAttribute("src");
       const preco = produtoWrapper.querySelector(".preco-produto").textContent;
+      const nome =
+        produtoWrapper.querySelector(".nome-produto")?.textContent.trim() ||
+        "Produto";
       const quantidadeEl = produtoWrapper.querySelector(".valor-quantidade");
       const quantidade = quantidadeEl ? quantidadeEl.textContent.trim() : "1";
 
@@ -447,12 +458,15 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
   btnFinalizar.addEventListener("click", function (event) {
-    event.preventDefault(); // Evita sair da página antes de salvar
+    event.preventDefault();
 
     const produtosFavoritos = [];
 
     document.querySelectorAll(".produto-favorito").forEach(function (produto) {
-      const imagem = produto.querySelector("img").src;
+      const imagem = new URL(
+        produto.querySelector("img").src,
+        window.location.href
+      ).href;
       const preco = produto.querySelector(".preco").textContent;
       const cor = produto
         .querySelector(".cor-favorito")
@@ -467,13 +481,25 @@ document.addEventListener("DOMContentLoaded", function () {
         .textContent.replace("Quantidade:", "")
         .trim();
 
-      produtosFavoritos.push({ imagem, preco, cor, tamanho, quantidade });
+      let nome = "Produto";
+      document.querySelectorAll(".produto-wrapper").forEach(function (wrapper) {
+        const img = new URL(
+          wrapper.querySelector("img").src,
+          window.location.href
+        ).href;
+        if (img === imagem) {
+          const nomeElemento = wrapper.querySelector(".nome-produto");
+          if (nomeElemento) {
+            nome = nomeElemento.textContent.trim();
+          }
+        }
+      });
+
+      produtosFavoritos.push({ imagem, preco, cor, tamanho, quantidade, nome });
     });
 
-    // Salva no localStorage
     localStorage.setItem("produtosCompra", JSON.stringify(produtosFavoritos));
 
-    // Vai para a página
     window.location.href = "all-compra/index.html";
   });
 });
@@ -665,47 +691,46 @@ document.querySelectorAll(".btn-comprar").forEach(function (botao) {
 // area de compra do favorito _______________________________________________________________
 document
   .getElementById("btn-finalizar")
-  .addEventListener("click", function (e) {
-    e.preventDefault();
+  .addEventListener("click", function (event) {
+    event.preventDefault();
 
     const produtosFavoritos = [];
-    const itens = document.querySelectorAll(
-      "#favoritos .lateral .produto-favorito"
-    );
-    // ajuste ".produto-favorito" para o seletor real dos itens na lateral
 
-    itens.forEach((item) => {
-      const nome =
-        item.querySelector(".nome-produto")?.textContent.trim() || "Produto";
-      const imagem = item.querySelector("img")?.src || "";
-      const precoTexto =
-        item.querySelector(".preco-produto")?.textContent.trim() || "R$ 0,00";
-      const preco = precoTexto;
-      const quantidade =
-        item.querySelector(".valor-quantidade")?.textContent.trim() || "1";
-
-      // Agora buscando cor e tamanho dentro do item
+    document.querySelectorAll(".produto-favorito").forEach(function (produto) {
+      const imagem = produto.querySelector("img").src;
+      const preco =
+        produto.querySelector(".preco")?.innerText.trim() || "R$ 0,00";
       const cor =
-        item.querySelector(".btn-cor.selecionado")?.textContent.trim() ||
-        "Cor padrão";
+        produto
+          .querySelector(".cor-favorito")
+          ?.innerText.replace("Cor:", "")
+          .trim() || "Cor padrão";
       const tamanho =
-        item
-          .querySelector(".btn-tamanho.selecionado")
-          ?.getAttribute("data-tamanho") || "Não disponível";
+        produto
+          .querySelector(".tamanho-favorito")
+          ?.innerText.replace("Tamanho:", "")
+          .trim() || "Não disponível";
+      const quantidade =
+        produto
+          .querySelector(".quantidade-favorito")
+          ?.innerText.replace("Quantidade:", "")
+          .trim() || "1";
 
-      produtosFavoritos.push({
-        nome,
-        imagem,
-        preco,
-        quantidade,
-        cor,
-        tamanho,
+      let nome = "Produto";
+      const todosProdutos = document.querySelectorAll(".produto-wrapper");
+      todosProdutos.forEach(function (wrapper) {
+        const img = wrapper.querySelector("img")?.getAttribute("src");
+        if (img === imagem) {
+          const nomeElemento = wrapper.querySelector(".nome-produto");
+          if (nomeElemento) {
+            nome = nomeElemento.textContent.trim();
+          }
+        }
       });
+
+      produtosFavoritos.push({ imagem, preco, cor, tamanho, quantidade, nome });
     });
 
-    // Salva na chave certa
     localStorage.setItem("produtosCompra", JSON.stringify(produtosFavoritos));
-
-    // Vai para a página de finalizar
     window.location.href = "all-compra/index.html";
   });

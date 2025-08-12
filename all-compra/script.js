@@ -12,33 +12,32 @@ document.addEventListener("DOMContentLoaded", function () {
     total += subtotal;
 
     const itemHTML = `
-    <div class="produto-item produto-finalizar">
-      <div class="produto-info">
-        <img src="${produto.imagem}" alt="${produto.nome || "Produto"}">
-        <div class="produto-detalhes">
-          <p class="nome-produto"><strong>Produto:</strong> ${
-            produto.nome || "Produto sem nome"
-          }</p>
-          <p class="cor-produto"><strong>Cor:</strong> ${produto.cor}</p>
-          <p class="tamanho-produto"><strong>Tamanho:</strong> ${
-            produto.tamanho
-          }</p>
-          <p class="quantidade-produto"><strong>Quantidade:</strong> ${
-            produto.quantidade
-          }</p>
+      <div class="produto-item produto-finalizar">
+        <div class="produto-info">
+          <img src="${produto.imagem}" alt="Produto">
+          <div class="produto-detalhes">
+            <p class="nome-produto"><strong>Produto:</strong> ${
+              produto.nome || "Produto"
+            }</p>
+            <p class="cor-produto"><strong>Cor:</strong> ${produto.cor}</p>
+            <p class="tamanho-produto"><strong>Tamanho:</strong> ${
+              produto.tamanho
+            }</p>
+            <p class="quantidade-produto"><strong>Quantidade:</strong> ${
+              produto.quantidade
+            }</p>
+          </div>
+        </div>
+        <div class="produto-preco preco-produto">
+          <strong>Preço unitário:</strong> R$ ${precoNum
+            .toFixed(2)
+            .replace(".", ",")}
         </div>
       </div>
-      <div class="produto-preco preco-produto">
-        <strong>Preço unitário:</strong> R$ ${precoNum
-          .toFixed(2)
-          .replace(".", ",")}
-      </div>
-    </div>
-  `;
+    `;
     listaProdutos.innerHTML += itemHTML;
   });
 
-  // Corrigindo para o ID certo
   document.getElementById("preco-total").textContent = `R$ ${total
     .toFixed(2)
     .replace(".", ",")}`;
