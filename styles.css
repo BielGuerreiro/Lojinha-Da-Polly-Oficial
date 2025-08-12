@@ -1187,18 +1187,12 @@ header.overlay-ativo .menu-icones li {
 }
 
 /* sexta pagina _____________________________________________________________________ */
-
 .sobre-container {
   position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin-top: 100px;
-}
-
-.sobre {
-  display: flex;
-  width: 100%;
 }
 
 .cena-3d {
@@ -1208,7 +1202,7 @@ header.overlay-ativo .menu-icones li {
   justify-content: center;
   position: absolute;
   left: 10%;
-  top: 20%;
+  top: 30%;
 }
 
 .foto-3d-interativa {
@@ -1237,7 +1231,7 @@ header.overlay-ativo .menu-icones li {
   color: rgb(255, 255, 255);
   position: absolute;
   left: 50%;
-  top: 28%;
+  top: 35%;
 }
 
 .nome-sobre {
