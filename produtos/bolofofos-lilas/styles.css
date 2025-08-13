@@ -1085,3 +1085,101 @@ footer {
   color: #000;
   font-size: 35px;
 }
+
+@media screen and (max-width: 826px) {
+  .favoritos {
+    right: -110%;
+    width: 100%;
+    height: 100%;
+    z-index: 8;
+  }
+
+  #close-favoritos {
+    color: var(--tertiary-color);
+  }
+
+  .produto-favorito {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    margin-bottom: -130px;
+  }
+
+  .produto-favorito img {
+    width: 90%;
+    height: 350px;
+    border-radius: 12px;
+    display: block;
+    position: relative;
+    left: 5%;
+    z-index: 4;
+  }
+
+  .produto-favorito .desfavoritar {
+    position: absolute;
+    bottom: 10px;
+    height: 50px;
+    top: 59%;
+    right: 8%;
+    font-size: 40px;
+    color: #000000;
+    cursor: pointer;
+    z-index: 5;
+  }
+
+  .produto-favorito .preco {
+    position: absolute;
+    left: 8%;
+    top: 60%;
+    color: rgb(255, 255, 255);
+    font-size: 30px;
+    z-index: 5;
+  }
+
+  .cor-favorito {
+    font-size: 20px;
+    color: #ffffff;
+    margin: 4px 0;
+    position: absolute;
+    left: 8%;
+    top: 53%;
+    z-index: 5;
+  }
+
+  .tamanho-favorito {
+    font-size: 20px;
+    color: #ffffff;
+    margin: 4px 0;
+    position: absolute;
+    left: 8%;
+    top: 48%;
+    z-index: 5;
+  }
+
+  .quantidade-favorito {
+    font-size: 20px;
+    color: #ffffff;
+    margin: 4px 0;
+    position: absolute;
+    left: 8%;
+    top: 42%;
+    z-index: 5;
+  }
+
+  .box-finalizar {
+    position: fixed;
+    width: 100%;
+    top: 88%;
+    z-index: 6;
+  }
+
+  .total {
+    margin-top: 32px;
+  }
+
+  #btn-finalizar {
+    width: 40%;
+    height: 40%;
+    left: 55%;
+  }
+}

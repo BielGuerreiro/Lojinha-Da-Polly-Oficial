@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Kit Bela e a Fera</title>
-    <link rel="shortcut icon" href="../../img/logo.png" type="image/x-icon" />
+    <title>Kit Mesversario| Lojinha da Polly</title>
+    <link rel="shortcut icon" href="../img/logo.png" type="image/x-icon" />
     <link
       href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
       rel="stylesheet"
@@ -14,8 +14,112 @@
   <body>
     <header>
       <div class="logo">
-        <img src="../../img/logo2.png" alt="logo" />
+        <img src="../img/logo2.png" alt="logo" />
       </div>
+
+      <!-- responsivo _________________________________________________________________ -->
+      <div class="menu-responsivo">
+        <li><i class="bx bx-menu" id="iconeMenu"></i></li>
+      </div>
+
+      <div class="menu-lateral">
+        <h2>Menu</h2>
+
+        <div class="menu-container">
+          <!-- Seção 1 ___________________________________________________ -->
+          <hr class="linha-cima" />
+          <div class="secao-toggle">
+            <div class="titulo-menu">
+              <span>Conjuntos</span>
+              <i class="bx bx-chevron-right seta-toggle"></i>
+            </div>
+            <div class="links-expandidos">
+              <a href="#">Catálogos</a>
+              <a href="#">Conjunto Feminino</a>
+              <a href="#">Conjunto Masculino</a>
+            </div>
+            <hr class="linha-baixo" />
+          </div>
+
+          <!-- Seção 2 ___________________________________________________ -->
+          <hr class="linha-cima" />
+          <div class="secao-toggle">
+            <div class="titulo-menu">
+              <span>Kits</span>
+              <i class="bx bx-chevron-right seta-toggle"></i>
+            </div>
+            <div class="links-expandidos">
+              <a href="#">Kits Aniversário</a>
+              <a href="#">Kits MêsVersário</a>
+            </div>
+            <hr class="linha-baixo" />
+          </div>
+
+          <!-- Seção 3 _______________________________________________________-->
+          <hr class="linha-cima" />
+          <div class="secao-toggle">
+            <div class="titulo-menu">
+              <span>Acessórios</span>
+              <i class="bx bx-chevron-right seta-toggle"></i>
+            </div>
+            <div class="links-expandidos">
+              <a href="#">Tiaras</a>
+              <a href="#">Laços</a>
+              <a href="#">Estilo Personalizado</a>
+            </div>
+            <hr class="linha-baixo" />
+          </div>
+
+          <!-- Seção 4 __________________________________________________________-->
+          <hr class="linha-cima" />
+          <div class="secao-toggle">
+            <div class="titulo-menu">
+              <span>Vitrine Extra</span>
+              <i class="bx bx-chevron-right seta-toggle"></i>
+            </div>
+            <div class="links-expandidos">
+              <a href="#">Moda & acessórios</a>
+              <a href="#">Beleza e cuidados pessoais</a>
+              <a href="#">Casa & decoração</a>
+              <a href="#">Techs criativos</a>
+            </div>
+            <hr class="linha-baixo" />
+          </div>
+
+          <div class="icone-responsivo-container">
+            <div class="icone-responsivo">
+              <ul>
+                <li>
+                  <a href=""><i class="bx bxl-facebook-circle"></i></a>
+                </li>
+                <li>
+                  <a href=""><i class="bx bxl-instagram-alt"></i></a>
+                </li>
+                <li>
+                  <a href=""><i class="bx bxl-whatsapp"></i></a>
+                </li>
+                <li>
+                  <a href=""><i class="bx bxl-tiktok"></i></a>
+                </li>
+                <li>
+                  <a href=""><i class="bx bxl-gmail"></i></a>
+                </li>
+                <li>
+                  <a href="" target="_blank" class="mercado1">
+                    <img src="../img/logo-mercado-livre.png" alt="mercado" />
+                  </a>
+                </li>
+                <li>
+                  <a href="" target="_blank" class="shope1">
+                    <img src="../img/logo-shope.png" alt="Shopee" />
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- final responsivo ________________________________________________ -->
 
       <div class="menu">
         <ul>
@@ -93,9 +197,9 @@
 
             <div class="links-rapidos">
               <h2>Links rapido</h2>
-              <a href="">Status do seu pedido</a>
-              <a href="">Devolucao</a>
-              <a href="">Termos de Uso</a>
+              <a href="../politica-de-envio/index.html">Política de Envio</a>
+              <a href="../devolucao/index.html">Devolucao</a>
+              <a href="../termos-de-uso/index.html">Termos de Uso</a>
             </div>
           </div>
         </div>
@@ -110,9 +214,9 @@
       </div>
 
       <div id="boxUsuario" class="box-usuario">
-        <a href="../../login/index.html" class="btn-entrar">Entrar</a>
+        <a href="../login/index.html" class="btn-entrar">Entrar</a>
         <p class="criar-conta">
-          <a href="../../login-criar/index.html">Criar conta</a>
+          <a href="../login-criar/index.html">Criar conta</a>
         </p>
       </div>
 
@@ -130,191 +234,93 @@
       <div class="favoritos" id="favoritos">
         <div class="topo">
           <i class="bx bx-x" id="close-favoritos"></i>
-          <h2>Favoritos (<span id="product-count">0</span>)</h2>
+          <h2>Carrinho (<span id="product-count">0</span>)</h2>
         </div>
         <div class="lateral"></div>
         <div class="box-finalizar">
           <div class="total">Total: <span id="preco-total">R$ 0,00</span></div>
-          <button id="btn-finalizar">Finalizar compra</button>
+          <a href="../all-compra/index.html" id="btn-finalizar">comprar</a>
         </div>
       </div>
     </header>
 
-    <main>
+    <section class="pagina2">
       <div class="titulo">
         <div class="barra"></div>
-        <h1 id="nome-produto" class="texto-titulo">Kit Bela e a Fera</h1>
+        <h1 class="texto-titulo">Todos Kit MêsVersário</h1>
       </div>
 
-      <div class="container">
-        <div class="produto-container">
+      <div class="produto-container">
+        <!-- produto 1____________________________________________________ -->
+
+        <div class="produto-wrapper">
           <div class="produto">
-            <div class="galeria">
-              <img
-                src="../../img/bela e a fera 1.jpg"
-                class="img-produto ativa"
-                alt="Imagem 1"
-              />
-              <img
-                src="../../img/bela e a fera 2.jpg"
-                class="img-produto"
-                alt="Imagem 2"
-              />
-            </div>
+            <div class="img-container">
+              <a href="../produtos/trolls/index.html">
+                <img src="../img/trolls 1.jpg" alt="kit trolls" />
+              </a>
 
-            <div class="indicadores">
-              <span class="bolinha ativa" data-index="0"></span>
-              <span class="bolinha" data-index="1"></span>
-            </div>
-          </div>
-        </div>
-      </div>
+              <div class="coracao-responsivo">
+                <i class="bx bx-heart favoritar"></i>
+              </div>
 
-      <div class="detalhes-container">
-        <div class="detalhes">
-          <h1>Descrição do Produto</h1>
-          <p>
-            -Algodão Penteado: Hipoalergênico, macio e com excelente
-            respirabilidade.
-          </p>
-          <p>
-            -Malha com Elastano: Garante flexibilidade para acompanhar os
-            movimentos do bebê sem apertar.
-          </p>
-          <p>-Tule com Forro de Algodão: Cria volume e leveza sem incomodar.</p>
-          <p>
-            -Cetim de Alta Qualidade: Brilho delicado e toque suave, perfeito
-            para ocasiões especiais.
-          </p>
-        </div>
+              <div class="hover-box">
+                <h1>Painel Rápido</h1>
 
-        <div class="cor">
-          <h1>Selecione a Cor desejada:</h1>
-          <div class="cores-container">
-            <button class="botao-cor rosa" data-cor="Amarelo"></button>
-          </div>
-        </div>
+                <!-- Box de cor -->
+                <div class="cores">
+                  <label>Cor:</label>
+                  <div class="opcoes-cor">
+                    <button class="btn-cor azul"></button>
+                  </div>
+                </div>
 
-        <div class="tamanho">
-          <h1>Selecione o Tamanho Desejado:</h1>
-          <div class="tamanhos-container">
-            <button class="botao-tamanho" data-tamanho="PP">PP</button>
-            <button class="botao-tamanho" data-tamanho="P">P</button>
-            <button class="botao-tamanho" data-tamanho="M">M</button>
-            <button class="botao-tamanho" data-tamanho="G">G</button>
-            <button class="botao-tamanho" data-tamanho="GG">GG</button>
-          </div>
-        </div>
+                <!-- Box de quantidade -->
+                <div class="quantidade">
+                  <label>Quantidade:</label>
+                  <div class="controle-quantidade">
+                    <button class="btn-quantidade diminuir">−</button>
+                    <span class="valor-quantidade">1</span>
+                    <button class="btn-quantidade aumentar">+</button>
+                  </div>
+                </div>
 
-        <div class="quantidade">
-          <h1>Selecione a Quantidade Desejada:</h1>
-          <div class="quantidade-container">
-            <button class="botao-quantidade" data-quantidade="1">1</button>
-            <button class="botao-quantidade" data-quantidade="2">2</button>
-            <button class="botao-quantidade" data-quantidade="3">3</button>
-            <button class="botao-quantidade" data-quantidade="4">4</button>
-            <button class="botao-quantidade" data-quantidade="5">5</button>
-            <button class="botao-quantidade" data-quantidade="6">6</button>
-            <button class="botao-quantidade" data-quantidade="7">7</button>
-            <button class="botao-quantidade" data-quantidade="8">8</button>
-            <button class="botao-quantidade" data-quantidade="9">9</button>
-            <button class="botao-quantidade" data-quantidade="10">10</button>
-            <button class="botao-quantidade" data-quantidade="11">11</button>
-            <button class="botao-quantidade" data-quantidade="12">12</button>
+                <!-- Tamanhos -->
+                <div class="opcoes-tamanho">
+                  <button class="btn-tamanho" data-tamanho="PP">PP</button>
+                  <button class="btn-tamanho" data-tamanho="P">P</button>
+                  <button class="btn-tamanho" data-tamanho="M">M</button>
+                  <button class="btn-tamanho" data-tamanho="G">G</button>
+                  <button class="btn-tamanho" data-tamanho="GG">GG</button>
+                </div>
 
-            <button id="expandir-quantidade">...</button>
+                <div class="estrelas">⭐ ⭐ ⭐ ⭐ ⭐</div>
 
-            <div id="quantidade-extra" style="display: none">
-              <button class="botao-quantidade" data-quantidade="13">13</button>
-              <button class="botao-quantidade" data-quantidade="14">14</button>
-              <button class="botao-quantidade" data-quantidade="15">15</button>
-              <button class="botao-quantidade" data-quantidade="16">16</button>
-              <button class="botao-quantidade" data-quantidade="17">17</button>
-              <button class="botao-quantidade" data-quantidade="18">18</button>
-              <button class="botao-quantidade" data-quantidade="19">19</button>
-              <button class="botao-quantidade" data-quantidade="20">20</button>
+                <div class="coracao">
+                  <ul>
+                    <li><i class="bx bx-heart favoritar"></i></li>
+                  </ul>
+                  <a href="../compra/index.html">
+                    <button class="btn-comprar">Comprar</button>
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-
-        <div class="comprar">
-          <h2>Por apenas R$189.90</h2>
-          <button id="botao-comprar">Comprar Agora!</button>
-          <div class="descricao-comprar">
-            <p>
-              ⚫ Clicando no botão, você vai direto pro WhatsApp do
-              administrador. Lá dá pra tirar dúvidas, combinar o frete e
-              escolher a melhor forma de pagamento — tudo do seu jeito!
-            </p>
-          </div>
-        </div>
-      </div>
-    </main>
-
-    <section class="segunda">
-      <div class="titulo">
-        <div class="barra2"></div>
-        <h1 class="segundo-titulo">Opções de Frete e Pagamentos</h1>
-      </div>
-
-      <div class="container-opcoes">
-        <div class="box">
-          <h1>Pagamento</h1>
-          <img src="../../img/dinheiro.png" alt="" />
-          <p class="info-pagamento">
-            💳 <strong>Formas de pagamento:</strong><br />
-            Aceitamos <strong>Pix</strong> ou
-            <strong>boleto</strong> .<br /><br />
-            📌 Após a confirmação do pedido, você receberá os dados para
-            pagamento via Pix.<br />
-            💬 Em caso de dúvidas, nossa equipe está disponível no WhatsApp para
-            te ajudar com qualquer etapa da compra.
-          </p>
-        </div>
-
-        <div class="box">
-          <h1>Frete</h1>
-          <img src="../../img/frete.webp" alt="" />
-          <p class="info-frete">
-            🚚 <strong>Frete grátis</strong> para pedidos acima de
-            <strong>R$250,00</strong>.<br />
-            Para compras abaixo desse valor, o frete será calculado no
-            checkout.<br /><br />
-            📦 Entregas para fora de São Paulo levam de
-            <strong>3 a 5 dias úteis</strong>.
-          </p>
-        </div>
-
-        <div class="box2 box-calculo-frete">
-          <h1>Calcular Frete</h1>
-          <img src="../../img/frete.webp" alt="Ícone de frete" />
-          <form class="form-frete">
-            <label for="cep">Digite seu CEP:</label>
-            <input
-              type="text"
-              id="cep"
-              name="cep"
-              placeholder="00000-000"
-              maxlength="8"
-              oninput="this.value = this.value.replace(/[^0-9]/g, '')"
-            />
-
-            <button type="submit">Calcular</button>
-          </form>
-          <p class="resultado-frete">
-            Informe seu CEP para ver o prazo e valor.
-          </p>
+          <div class="nome-produto">kit Trolls</div>
+          <div class="preco-produto">R$ 179.90</div>
         </div>
       </div>
     </section>
 
+    <!-- fotter ___________________________________________________________________ -->
     <footer>
       <div class="footer-container">
         <div class="links-rapido">
-          <a href="politica-de-envio/index.html">Política de Envio</a>
-          <a href="termos-de-uso/index.html">Termos de uso</a>
-          <a href="devolucao/index.html">Devolução</a>
-          <a href="politica-de-privacidade/index.html"
+          <a href="../politica-de-envio/index.html">Política de Envio</a>
+          <a href="../termos-de-uso/index.html">Termos de uso</a>
+          <a href="../devolucao/index.html">Devolução</a>
+          <a href="../politica-de-privacidade/index.html"
             >Política de Privacidade</a
           >
         </div>
@@ -382,12 +388,12 @@
             </li>
             <li>
               <a href="" target="_blank" class="shope">
-                <img src="../../img/logo-shope.png" alt="Shopee" />
+                <img src="../img/logo-shope.png" alt="Shopee" />
               </a>
             </li>
             <li>
               <a href="" target="_blank" class="mercado">
-                <img src="../../img/logo-mercado-livre.png" alt="mercado" />
+                <img src="../img/logo-mercado-livre.png" alt="mercado" />
               </a>
             </li>
           </ul>
@@ -395,8 +401,8 @@
       </div>
 
       <div class="contribuicao">
-        <a href="">
-          <img src="../../img/logo.png" alt="" />
+        <a href="../index.html">
+          <img src="../img/logo.png" alt="" />
         </a>
         <div class="direitos">
           <i class="bx bxs-chevron-right">
@@ -405,16 +411,6 @@
         </div>
       </div>
     </footer>
-
-    <div id="confirmacao-custom" class="popup" style="display: none">
-      <div class="popup-content">
-        <p id="mensagem-confirmacao"></p>
-        <div class="botoes">
-          <button id="btn-confirmar">Continuar</button>
-          <button id="btn-cancelar">Cancelar</button>
-        </div>
-      </div>
-    </div>
 
     <script src="script.js"></script>
   </body>

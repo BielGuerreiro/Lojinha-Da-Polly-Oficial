@@ -391,6 +391,10 @@ document.addEventListener("DOMContentLoaded", function () {
           ? "Azul"
           : corSelecionada.classList.contains("vermelho")
           ? "Vermelho"
+          : corSelecionada.classList.contains("amarelo")
+          ? "Amarelo"
+          : corSelecionada.classList.contains("rosa")
+          ? "Rosa"
           : "Cor padrão"
         : "Não disponível";
 
