@@ -35,6 +35,71 @@ header {
   z-index: 1;
 }
 
+/* efeito universal ______________________________________________________________________________________ */
+.efeito1,
+.efeito2,
+.efeito3,
+.efeito4,
+.efeito5 {
+  opacity: 0;
+}
+
+@keyframes esquerda {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes subir {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes descer {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.efeito1.visivel {
+  animation: subir 0.8s ease-out forwards;
+}
+
+.efeito2.visivel {
+  animation: subir 0.8s ease-out forwards;
+  animation-delay: 0.4s;
+}
+
+.efeito3.visivel {
+  animation: subir 0.8s ease-out forwards;
+  animation-delay: 0.6s;
+}
+
+.efeito4.visivel {
+  animation: descer 0.9s ease-out forwards;
+  animation-delay: 0.6s;
+}
+
+.efeito5.visivel {
+  animation: esquerda 0.8s ease-out forwards;
+}
+
 .logo img {
   width: 6%;
   height: auto;
@@ -1097,6 +1162,26 @@ footer {
   height: auto;
   margin-top: -25px;
   margin-left: -29px;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: linear-gradient(to bottom, #237dd6 0%, #001f3f 50%, #1e5fda 80%);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #3498db;
+  border-radius: 12px;
+  border: 1px solid #166a91;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #2980b9;
 }
 
 @media screen and (max-width: 826px) {

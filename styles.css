@@ -33,6 +33,71 @@ header {
   z-index: 12;
 }
 
+/* efeito universal ______________________________________________________________________________________ */
+.efeito1,
+.efeito2,
+.efeito3,
+.efeito4,
+.efeito5 {
+  opacity: 0;
+}
+
+@keyframes esquerda {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes subir {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes descer {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.efeito1.visivel {
+  animation: subir 0.8s ease-out forwards;
+}
+
+.efeito2.visivel {
+  animation: subir 0.8s ease-out forwards;
+  animation-delay: 0.4s;
+}
+
+.efeito3.visivel {
+  animation: subir 0.8s ease-out forwards;
+  animation-delay: 0.6s;
+}
+
+.efeito4.visivel {
+  animation: descer 0.9s ease-out forwards;
+  animation-delay: 0.6s;
+}
+
+.efeito5.visivel {
+  animation: esquerda 0.8s ease-out forwards;
+}
+
 .logo img {
   width: 7%;
   height: auto;
@@ -330,7 +395,7 @@ header.overlay-ativo .menu-icones li {
 
 .barra-pesquisa button {
   background-color: transparent;
-  margin-left: 8px;
+  margin-left: -50px;
   color: rgb(0, 0, 0);
   font-size: 30px;
   border: none;
@@ -341,9 +406,9 @@ header.overlay-ativo .menu-icones li {
 }
 
 .fechar-pesquisa {
-  position: fixed;
+  position: absolute;
   top: -3px;
-  right: 8%;
+  right: 20%;
 }
 
 .fechar-pesquisa i {
@@ -644,6 +709,7 @@ header.overlay-ativo .menu-icones li {
 .home-page {
   position: relative;
   margin-top: 90px;
+  height: 68vh;
 }
 
 .banner {
@@ -688,10 +754,85 @@ header.overlay-ativo .menu-icones li {
   }
 }
 
-.home-imagens {
-  position: relative;
-  top: 50px;
-  left: 20%;
+.cena-3d {
+  perspective: 1000px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  left: 10%;
+  top: 30%;
+}
+
+.foto-3d-interativa {
+  width: auto;
+  height: auto;
+  border: 5px solid #ffffff;
+  border-radius: 200px;
+  object-fit: cover;
+  image-rendering: crisp-edges;
+  box-shadow: 0 0 50px #ffffff;
+  transform-style: preserve-3d;
+  transition: transform 0.1s linear;
+  background-color: rgba(255, 255, 255, 0.336);
+}
+
+.foto-3d-interativa {
+  width: 400px;
+  transform-style: preserve-3d;
+  transition: transform 0.1s linear;
+}
+
+.sobre {
+  height: 50vh;
+  width: 80%;
+  margin-top: 100px;
+  margin-left: 160px;
+  border: 1px solid rgb(0, 0, 0);
+  border-radius: 50px;
+}
+.sobre-conteudo {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  color: rgb(0, 0, 0);
+  position: absolute;
+  left: 50%;
+  top: 40%;
+}
+
+.nome-sobre {
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.sobre-contatos ul {
+  display: flex;
+  gap: 10px;
+}
+
+.garantia {
+  font-size: 20px;
+  max-width: 600px;
+}
+
+.data {
+  font-size: 20px;
+  max-width: 500px;
+}
+
+.sobre-contatos {
+  font-size: 20px;
+}
+.sobre-contatos a {
+  font-size: 30px;
+  color: rgb(255, 255, 255);
+  transition: 0.3s;
+}
+
+.sobre-contatos a {
+  color: red;
 }
 
 /* pagina 2 __________________________________________________________________ */
@@ -1139,14 +1280,13 @@ header.overlay-ativo .menu-icones li {
 }
 
 /* quinto contato _________________________________________________________________ */
+
 .contato-container {
-  height: 100vh;
-  width: 90%;
-  margin-left: 90px;
-  background-color: rgba(15, 190, 53, 0.473);
   position: relative;
-  margin-top: 150px;
-  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 100px;
 }
 
 .contato {
@@ -1185,83 +1325,6 @@ header.overlay-ativo .menu-icones li {
 
 .whatsapp-button:hover {
   background-color: #128c7e;
-}
-
-/* sexta pagina _____________________________________________________________________ */
-.sobre-container {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-top: 100px;
-}
-
-.cena-3d {
-  perspective: 1000px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: absolute;
-  left: 10%;
-  top: 30%;
-}
-
-.foto-3d-interativa {
-  width: auto;
-  height: auto;
-  border: 5px solid #ff69b4;
-  border-radius: 200px;
-  object-fit: cover;
-  image-rendering: crisp-edges;
-  box-shadow: 0 0 25px #ff69b4;
-  transform-style: preserve-3d;
-  transition: transform 0.1s linear;
-}
-
-.foto-3d-interativa {
-  width: 400px;
-  transform-style: preserve-3d;
-  transition: transform 0.1s linear;
-}
-
-.sobre-conteudo {
-  flex: 2;
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  color: rgb(255, 255, 255);
-  position: absolute;
-  left: 50%;
-  top: 35%;
-}
-
-.nome-sobre {
-  font-size: 40px;
-  font-weight: bold;
-}
-
-.sobre-contatos ul {
-  display: flex;
-  gap: 10px;
-}
-
-.garantia {
-  font-size: 20px;
-  max-width: 600px;
-}
-
-.data {
-  font-size: 20px;
-  max-width: 500px;
-}
-
-.sobre-contatos {
-  font-size: 20px;
-}
-.sobre-contatos a {
-  font-size: 30px;
-  color: rgb(255, 255, 255);
-  transition: 0.3s;
 }
 
 /* rodapé __________________________________________________________________________ */
@@ -1391,6 +1454,26 @@ footer {
   margin-left: -29px;
 }
 
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: linear-gradient(to bottom, #237dd6 0%, #001f3f 50%, #1e5fda 80%);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #3498db;
+  border-radius: 100px;
+  border: 1px solid #166a91;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #2980b9;
+}
+
 @media screen and (max-width: 826px) {
   .menu ul,
   .fundoEscuro2 {
@@ -1454,11 +1537,6 @@ footer {
 
   .fechar-pesquisa {
     top: 10px;
-  }
-
-  #fundoEscuro {
-    left: 0;
-    z-index: 2;
   }
 
   /* produtos pesquisa __________________________________________________________________ */
@@ -1584,6 +1662,7 @@ footer {
   .pagina2 {
     padding: 20px 10px;
     min-height: 187vh;
+    margin-top: 200px;
   }
 
   .titulo {
@@ -1601,7 +1680,7 @@ footer {
 
   .produto-container {
     grid-template-columns: repeat(2, 1fr);
-    margin-left: -2px;
+    margin-left: -1px;
     gap: 20px;
   }
 
@@ -1615,10 +1694,11 @@ footer {
     width: 600%;
     height: 200px;
     margin-top: 70px;
+    margin-left: 20px;
   }
 
   .nome-produto {
-    margin-left: 5px;
+    margin-left: 30px;
     font-size: 20px;
   }
 
@@ -1628,7 +1708,7 @@ footer {
 
   .preco-produto {
     font-size: 25px;
-    margin-left: 5px;
+    margin-left: 30px;
   }
 
   .saiba-mais {
@@ -1725,35 +1805,44 @@ footer {
   .cena-3d {
     position: static;
     margin-bottom: 10px;
-    margin-top: -190px;
+    margin-top: -250px;
+    margin-left: 0px;
   }
 
   .foto-3d-interativa {
     width: 200px;
-    height: auto;
     border-width: 3px;
-    border-radius: 100px;
+  }
+
+  .sobre {
+    height: 40vh;
+    width: 80%;
+    margin-top: 250px;
+    margin-left: 50px;
   }
 
   .sobre-conteudo {
-    position: static;
-    left: auto;
-    top: auto;
-    gap: 10px;
+    left: 15%;
+    top: 75%;
   }
 
   .nome-sobre {
-    font-size: 24px;
-    color: rgb(255, 255, 255);
-    margin-top: 15px;
+    font-size: 30px;
+    margin-left: -50px;
+  }
+
+  .sobre-contatos a {
+    font-size: 18px;
+    color: rgb(255, 0, 0);
+    transition: 0.3s;
   }
 
   .garantia,
   .data,
   .sobre-contatos {
-    font-size: 16px;
-    max-width: 100%;
-    color: rgb(255, 255, 255);
+    font-size: 13px;
+    max-width: 80%;
+    color: rgb(0, 0, 0);
   }
 
   .sobre-contatos ul {
