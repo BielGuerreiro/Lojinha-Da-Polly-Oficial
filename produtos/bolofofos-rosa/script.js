@@ -2,15 +2,16 @@
 const video = document.getElementById("videoProduto");
 
 video.addEventListener("ended", () => {
-  video.controls = true; // Mostra os controles (incluindo botão de play)
+  video.controls = true;
 });
 
 let tamanhoSelecionado = "";
 let quantidadeSelecionada = "";
 let corSelecionada = "";
 
+// Botões de tamanho ________________________________________________________________________
+
 document.addEventListener("DOMContentLoaded", () => {
-  // Botões de tamanho ________________________________________________________________________
   const botoesTamanho = document.querySelectorAll(".botao-tamanho");
   botoesTamanho.forEach((botao) => {
     botao.addEventListener("click", () => {

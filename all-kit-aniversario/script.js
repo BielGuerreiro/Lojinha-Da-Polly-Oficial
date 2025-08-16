@@ -1,3 +1,37 @@
+// efeito universal __________________________________________________________________
+const efeitos = ["efeito1", "efeito2", "efeito3", "efeito4", "efeito5"];
+
+const elementos = document.querySelectorAll(
+  efeitos.map((e) => `.${e}`).join(",")
+);
+
+const observer = new IntersectionObserver(
+  (entradas) => {
+    entradas.forEach((entrada) => {
+      if (entrada.isIntersecting) {
+        entrada.target.classList.add("visivel");
+        observer.unobserve(entrada.target);
+      }
+    });
+  },
+  {
+    threshold: 0.1,
+  }
+);
+
+elementos.forEach((el) => observer.observe(el));
+const responsivo = window.matchMedia("(max-width: 768px)").matches;
+
+if (responsivo) {
+  const produto3 = document.querySelector(".efeito3");
+
+  if (produto3) {
+    produto3.classList.remove("efeito3");
+    produto3.classList.add("efeito1");
+  }
+}
+
+// coracao ________________________________
 document.querySelectorAll(".bx-heart, .bxs-heart").forEach((icon) => {
   icon.addEventListener("click", function (e) {
     e.preventDefault();

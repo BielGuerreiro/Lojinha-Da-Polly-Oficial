@@ -34,6 +34,71 @@ header {
   z-index: 12;
 }
 
+/* efeito universal ______________________________________________________________________________________ */
+.efeito1,
+.efeito2,
+.efeito3,
+.efeito4,
+.efeito5 {
+  opacity: 0;
+}
+
+@keyframes esquerda {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes subir {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes descer {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.efeito1.visivel {
+  animation: subir 0.8s ease-out forwards;
+}
+
+.efeito2.visivel {
+  animation: subir 0.8s ease-out forwards;
+  animation-delay: 0.4s;
+}
+
+.efeito3.visivel {
+  animation: subir 0.8s ease-out forwards;
+  animation-delay: 0.6s;
+}
+
+.efeito4.visivel {
+  animation: descer 0.9s ease-out forwards;
+  animation-delay: 0.6s;
+}
+
+.efeito5.visivel {
+  animation: esquerda 0.8s ease-out forwards;
+}
+
 .logo img {
   width: 6%;
   height: auto;

@@ -1371,7 +1371,7 @@ footer {
 
   /* home page _________________________________________________________________________________________ */
   main {
-    height: 350vh;
+    height: 330vh;
     margin-top: -120px;
   }
 
@@ -1434,7 +1434,7 @@ footer {
 
   .comprar h2 {
     position: absolute;
-    top: 67%;
+    top: 60%;
     font-size: 30px;
   }
 
@@ -1445,7 +1445,7 @@ footer {
   .descricao-comprar {
     width: 90%;
     height: 6.5%;
-    top: 76%;
+    top: 73%;
     left: 1%;
   }
 

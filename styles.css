@@ -265,6 +265,7 @@ header {
   position: absolute;
   bottom: 0;
   left: 0;
+  top: 92%;
   width: 100%;
   background-color: var(--tertiary-color);
   padding: 10px 0;
@@ -277,7 +278,6 @@ header {
   justify-content: center;
   align-items: center;
   gap: 15px;
-  list-style: none;
   margin: 0;
   padding: 0;
 }
@@ -1474,6 +1474,7 @@ footer {
   background-color: #2980b9;
 }
 
+/* responsivo ____________________________________________________________________________ */
 @media screen and (max-width: 826px) {
   .menu ul,
   .fundoEscuro2 {
@@ -1519,7 +1520,7 @@ footer {
 
   .barra-pesquisa input {
     width: 75%;
-    height: 45%;
+    height: 50%;
     margin-left: 10px;
     margin-top: 20px;
   }
@@ -1536,7 +1537,8 @@ footer {
   }
 
   .fechar-pesquisa {
-    top: 10px;
+    top: 7px;
+    left: 90%;
   }
 
   /* produtos pesquisa __________________________________________________________________ */
@@ -1590,58 +1592,31 @@ footer {
   }
 
   .produto-favorito .desfavoritar {
-    position: absolute;
-    bottom: 10px;
-    height: 50px;
     top: 59%;
-    right: 8%;
-    font-size: 40px;
-    color: #000000;
-    cursor: pointer;
-    z-index: 5;
   }
 
   .produto-favorito .preco {
-    position: absolute;
     left: 8%;
     top: 60%;
-    color: rgb(255, 255, 255);
-    font-size: 30px;
-    z-index: 5;
   }
 
   .cor-favorito {
-    font-size: 20px;
-    color: #ffffff;
-    margin: 4px 0;
-    position: absolute;
     left: 8%;
     top: 53%;
-    z-index: 5;
   }
 
   .tamanho-favorito {
-    font-size: 20px;
-    color: #ffffff;
-    margin: 4px 0;
-    position: absolute;
     left: 8%;
     top: 48%;
-    z-index: 5;
   }
 
   .quantidade-favorito {
-    font-size: 20px;
-    color: #ffffff;
-    margin: 4px 0;
-    position: absolute;
     left: 8%;
     top: 42%;
-    z-index: 5;
   }
 
   .box-finalizar {
-    position: fixed;
+    position: absolute;
     width: 100%;
     top: 88%;
     z-index: 6;
@@ -1694,11 +1669,11 @@ footer {
     width: 600%;
     height: 200px;
     margin-top: 70px;
-    margin-left: 20px;
+    margin-left: 0px;
   }
 
   .nome-produto {
-    margin-left: 30px;
+    margin-left: 10px;
     font-size: 20px;
   }
 
@@ -1708,7 +1683,7 @@ footer {
 
   .preco-produto {
     font-size: 25px;
-    margin-left: 30px;
+    margin-left: 10px;
   }
 
   .saiba-mais {
@@ -1768,31 +1743,32 @@ footer {
 
   /* quinto contato _________________________________________________________________ */
   .contato-container {
-    height: 71vh;
-    width: 90%;
-    margin-left: 18px;
+    height: 100vh;
+    width: 100%;
+    margin-left: 0px;
     margin-top: 100px;
+    background-color: rgb(0, 0, 0);
   }
 
   .contato {
     width: 330px;
-    left: 5.5%;
-    top: 5%;
+    height: auto;
+    left: 10%;
+    top: 20%;
+    border: 2px solid rgb(255, 255, 255);
+    box-shadow: 0 0 10px rgb(255, 255, 255);
   }
 
-  /* sexta pagina _____________________________________________________________________ */
-  .sobre-container {
-    flex-direction: column;
-    margin-top: 100px;
-    height: auto;
+  .video-topo {
+    width: 100%;
+    max-width: 800px;
     background-color: #000;
-    padding-bottom: 10px;
+    margin-bottom: 340px;
   }
 
   .video-topo video {
     width: 100%;
-    height: 260px;
-    max-height: 300px;
+    height: 100%;
   }
 
   .sobre {
@@ -1806,7 +1782,7 @@ footer {
     position: static;
     margin-bottom: 10px;
     margin-top: -250px;
-    margin-left: 0px;
+    margin-left: -20px;
   }
 
   .foto-3d-interativa {
@@ -1822,12 +1798,12 @@ footer {
   }
 
   .sobre-conteudo {
-    left: 15%;
-    top: 75%;
+    left: 16%;
+    top: 63%;
   }
 
   .nome-sobre {
-    font-size: 30px;
+    font-size: 25px;
     margin-left: -50px;
   }
 
@@ -1855,7 +1831,7 @@ footer {
   .footer-container {
     position: relative;
     height: 50vh;
-    margin-top: -80px;
+    margin-top: 0px;
   }
 
   .links-rapido {
@@ -1900,7 +1876,7 @@ footer {
 
   .contribuicao {
     position: relative;
-    top: 270px;
+    top: 253px;
     margin-left: auto;
     margin-right: auto;
     max-width: 1200px;
