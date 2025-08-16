@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", function () {
 // area do whatassap ________________________________________________
 function enviarParaWhatsApp() {
   const produtos = JSON.parse(localStorage.getItem("produtosCompra")) || [];
-  const numeroWhatsApp = "5599999999999";
+  const numeroWhatsApp = "5511976884784";
 
   let mensagem = "🛒 Olá! Desejo comprar os seguintes produtos:%0A%0A";
 

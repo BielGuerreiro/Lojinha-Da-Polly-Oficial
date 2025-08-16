@@ -46,7 +46,7 @@ document.querySelector(".btn-finalizar").addEventListener("click", function () {
 🔢 Quantidade: ${quantidade}
 `;
 
-  const numeroWhatsApp = "5511983830590";
+  const numeroWhatsApp = "5511976884784";
 
   const url = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(
     mensagem
